@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='simple.css')}}" />
+</head>
+<body>
+    <div id="widther">
+        <div id="header">
+            <div style="float:left;">
+                <em>Logo Placeholder</em>
+            </div>
+            <div style="float:right;">
+                <a href="{{ url_for('routes.datasets') }}">Datasets</a> |
+                <a href="{{ url_for('routes.linksets') }}">Linksets</a> |
+                <a href="{{ url_for('routes.defs') }}">Definitional Items</a> |
+                <a href="{{ url_for('routes.tools') }}">Tools</a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+        <div id="container-content">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="footer">
+            <p>
+                This is an experimental web page created by CSIRO's <a href="https://research.csiro.au/ei/">
+                Environmental Informatics Group</a> to demonstrate the <a href="{{ url_for('routes.about') }}">LocI
+                Project</a>'s assets.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
