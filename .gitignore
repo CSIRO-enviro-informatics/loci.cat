@@ -110,3 +110,8 @@ venv.bak/
 
 # local config file
 config.py
+
+# example RDF files
+*.ttl
+# pickle files
+*.p

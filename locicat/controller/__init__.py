@@ -1,19 +1,10 @@
-from flask import Blueprint, render_template, redirect, Response
+from flask import Blueprint, render_template, redirect, request
 import locicat.config as config
 import markdown
 from flask import Markup
-from rdflib import Namespace, RDF
+from locicat.view.register import LociRegisterRenderer
 
 routes = Blueprint('routes', __name__)
-
-
-# @routes.before_first_request
-# def load_graph():
-#     print('getting graphs')
-#     import sys
-#     import os
-#     sys.path.insert(0, os.path.join(os.path.dirname(config.APP_DIR), 'harvester'))
-#     g = get_graphs()
 
 
 @routes.route('/')
@@ -26,38 +17,58 @@ def index():
 
 @routes.route('/dataset/')
 def datasets():
-    # DCAT = Namespace('http://www.w3.org/ns/dcat#')
-    # for s in g.subjects(RDF.type, DCAT.Distribution):
-    #     print(s)
+    renderer = LociRegisterRenderer(
+        request,
+        '',
+        "Dataset Register",
+        "Register of all VoID Datasets",
+        [config.URI_DATASET_CLASS],
+        0,
+        super_register=config.URI_BASE)
 
-    import harvester
-    g = harvester.get_graphs()
-    DCAT = Namespace('http://www.w3.org/ns/dcat#')
-    DCT = Namespace('http://purl.org/dc/terms/')
-    o = []
-    for s in g.subjects(RDF.type, DCAT.DataDistributionService):
-        for t in g.objects(s, DCT.title):
-            o.append('<li><a href="{0}">{1}</a></li>'.format(s, t))
-    # for d in g.query(q):
-    #     o += '<li><a href="{0}">{1}</a></li>'.format(d['d'], d['title'])
-    sorted(o)  # TODO: improve sort
-    o = '<html><ul>{}</ul></html>'.format('\n'.join(o))
-    return Response(o)
+    return renderer.render()
 
 
 @routes.route('/linkset/')
 def linksets():
-    return 'Coming!'
+    renderer = LociRegisterRenderer(
+        request,
+        '',
+        "Linksets Register",
+        "Register of all VoID Linksets",
+        [config.URI_LINKSET_CLASS],
+        0,
+        super_register=config.URI_BASE)
+
+    return renderer.render()
 
 
 @routes.route('/def/')
 def defs():
-    return 'Coming!'
+    renderer = LociRegisterRenderer(
+        request,
+        '',
+        "Definitional Resources Register",
+        "Register of all Definitional Resources",
+        [config.URI_DEF_CLASS],
+        0,
+        super_register=config.URI_BASE)
+
+    return renderer.render()
 
 
 @routes.route('/tool/')
 def tools():
-    return 'Coming!'
+    renderer = LociRegisterRenderer(
+        request,
+        'http://loci.cat/tool/',
+        "Tools Register",
+        "Register of all Tools",
+        [config.URI_TOOL_CLASS],
+        0,
+        super_register=config.URI_BASE)
+
+    return renderer.render()
 
 
 @routes.route('/about')

@@ -4,17 +4,20 @@ from rdflib import Graph, Namespace, RDF
 import owlrl
 import requests
 import pickle
+import os.path
 
 
-def harvest_ontologies():
+def harvest_defs():
+    print('Harvesting Defs')
+    print('---------------')
     g = Graph()
     # DCAT (rev)
     g1 = Graph()
-    g1.load('dcat.ttl', format='turtle')
+    g1.load(os.path.join(config.APP_DIR, 'dcat.ttl'), format='turtle')
     print('From DCAT (rev) local file got {} triples'.format(len(g1)))
     g = g + g1
 
-    for d in config.ONTOLOGIES:
+    for d in config.DEFS:
         print('Harvesting {}'.format(d))
         g1 = Graph()
         r = requests.get(d, headers={'Accept': 'text/turtle'})
@@ -24,7 +27,7 @@ def harvest_ontologies():
 
     # Geofabric harvest
     g1 = Graph()
-    g1.load('hy_features_entailed.ttl', format='turtle')
+    g1.load(os.path.join(config.APP_DIR, 'hy_features_entailed.ttl'), format='turtle')
     print('From Geofabric local file got {} triples'.format(len(g1)))
     g = g + g1
 
@@ -34,14 +37,16 @@ def harvest_ontologies():
     print('Expanded to {}'.format(len(g)))
 
     # pickle the graph for page loads until next refresh
-    pickle.dump(g, open('ontologies.p', 'wb'))
+    pickle.dump(g, open(os.path.join(config.APP_DIR, 'defs.p'), 'wb'))
 
-    print('Ontologies graph stored')
+    print('Defs graph stored')
 
     return g
 
 
 def harvest_datasets():
+    print('Harvesting Datasets')
+    print('---------------')
     # for each dataset in the config file, pull down its DCAT description
     g = Graph()
     for d in config.DATASETS:
@@ -63,12 +68,14 @@ def harvest_datasets():
 
 
 def harvest_linksets():
+    print('Harvesting Linksets')
+    print('---------------')
     # TODO: implement harvest_linksets
     pass
 
 
 def harvest():
-    harvest_ontologies()
+    harvest_defs()
     harvest_datasets()
     harvest_linksets()
 
@@ -85,9 +92,9 @@ def load_graph(graph_file):
 def get_graphs():
     g = Graph()
 
-    o = load_graph('ontologies.p')
+    o = load_graph('defs.p')
     if not o:
-        o = harvest_ontologies()
+        o = harvest_defs()
     g += o
 
     d = load_graph('datasets.p')
@@ -105,7 +112,7 @@ def get_graphs():
 
 
 if __name__ == '__main__':
-    # harvest_ontologies()
+    # harvest_defs()
 
     g = get_graphs()
 
