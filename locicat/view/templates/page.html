@@ -3,13 +3,14 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='simple.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='loci.css') }}" />
 </head>
 <body>
     <div id="widther">
+        <img src="{{ url_for('static', filename='loci.png') }}" style="height:200px;" title="LocI logo" />
         <div id="header">
             <div style="float:left;">
-                <em>Logo Placeholder</em>
+
             </div>
             <div style="float:right;">
                 <a href="{{ url_for('routes.datasets') }}">Datasets</a> |
