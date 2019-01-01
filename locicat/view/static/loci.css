@@ -121,11 +121,11 @@ code {
     font-size: larger;
 }
 
-.altview {
+#alternates {
     float: right;
     display: block;
     background-color: rgb(189, 217, 176);
     padding: 10px;
-    width:30%;
+    width:200px;
     text-align:center;
 }
