@@ -7,16 +7,20 @@
 </head>
 <body>
     <div id="widther">
-        <img src="{{ url_for('static', filename='loci.png') }}" style="height:200px;" title="LocI logo" />
+        <a href="{{ url_for('routes.about') }}">
+            <img src="{{ url_for('static', filename='loci.png') }}" style="height:200px;" title="LocI logo" />
+        </a>
         <div id="header">
             <div style="float:left;">
 
             </div>
             <div style="float:right;">
+                <a href="{{ url_for('routes.index') }}">LocI Cat Home</a> ||
                 <a href="{{ url_for('routes.datasets') }}">Datasets</a> |
                 <a href="{{ url_for('routes.linksets') }}">Linksets</a> |
                 <a href="{{ url_for('routes.defs') }}">Definitional Items</a> |
-                <a href="{{ url_for('routes.tools') }}">Tools</a>
+                <a href="{{ url_for('routes.tools') }}">Tools</a> ||
+                <a href="{{ url_for('routes.about') }}">About</a>
             </div>
             <div style="clear:both;"></div>
         </div>
@@ -28,7 +32,11 @@
             <p>
                 This is an experimental web page created by CSIRO's <a href="https://research.csiro.au/ei/">
                 Environmental Informatics Group</a> to demonstrate the <a href="{{ url_for('routes.about') }}">LocI
-                Project</a>'s assets.
+                Project</a>'s assets. For more information, see the <a href="{{ url_for('routes.about') }}">About page</a>.
+            </p>
+            <p style="font-size:smaller;">
+                &copy; <a href="http://csiro.au">CSIRO, 2019</a>. All system content (code) used here licensed using the GNU General Public License, v3. See <a href="{{ url_for('routes.license') }}">LICENSE</a> for the deed.<br />
+                Catalogue content licensed separately - see the items themselves.
             </p>
         </div>
     </div>

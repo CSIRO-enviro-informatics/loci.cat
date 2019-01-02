@@ -4,7 +4,7 @@ table, th, td {
 }
 
 h1 {
-    color: rgb(171, 132, 118);
+    color: #D2875E; /*rgb(171, 132, 118);*/
     font-family: 'FontSiteSans Light', Verdana, Arial, Helvetica, sans-serif;
     font-size: 3em;
     letter-spacing: -0.045em;
@@ -16,7 +16,7 @@ h2 {
     color: #666666;
     font-size: 2em;
     letter-spacing: -0.045em;
-    margin: 0;
+    margin: 30px 0 10px 0;
     padding: 0;
     font-weight: 100;
 }
@@ -68,13 +68,11 @@ body {
     padding: 20px;
 }
 #header {
-    background-color: rgb(138, 187, 117);
-    padding: 5px;
+    background-color: #FFD5BF; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
+    padding: 20px;
 }
 
-
-
-
+/*
 #container-content > table,
 #container-content > table > tbody > tr > td,
 #container-content > table > tfoot > tr > td,
@@ -91,6 +89,7 @@ table.alternates td {
 table.content td {
     padding: 5px;
 }
+*/
 
 #box {
     margin: 0 auto;
@@ -112,9 +111,10 @@ ul {
 }
 
 #footer {
-    background-color: rgb(138, 187, 117);
-    padding: 5px;
+    background-color: #FFD5BF; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
+    padding: 5px 20px 5px 20px;
     text-align: center;
+    font-style: italic;
 }
 
 code {
@@ -124,8 +124,12 @@ code {
 #alternates {
     float: right;
     display: block;
-    background-color: rgb(189, 217, 176);
+    background-color: #FFD5BF; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
     padding: 10px;
     width:200px;
     text-align:center;
+}
+
+a {
+    color: #AA5D33;
 }

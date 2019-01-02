@@ -1,10 +1,10 @@
 {% extends "page.html" %}
 
 {% block content %}
-    <div class="altview">
+    <div id="alternates">
         <h4>Alternates View</h4>
-        <p>See this content according to particular views and in other formats:</p>
-        <p><a href="{{ url_for('routes.index', _view='alternates') }}">This page's <em>Alternates</em> View</a></p>
+        <p>See this content according to other views and formats:</p>
+        <p><a href="{{ url_for('routes.index', _view='alternates') }}"><em>Alternates</em> View</a></p>
     </div>
     <h1>loci.cat</h1>
     <p>
@@ -13,7 +13,7 @@
     </p>
     <h3>More LocI information</h3>
     <p>
-        The LocI project has its own homepage: <em><strong>coming soon!</strong></em>
+        The LocI project will soon have its own homepage and that will be listed here.
     </p>
     <h3>Register of Registers</h3>
     <p>

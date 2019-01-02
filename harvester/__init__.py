@@ -60,7 +60,7 @@ def harvest_datasets():
     print('Expanded to {}'.format(len(g)))
 
     # pickle the graph for page loads until next refresh
-    pickle.dump(g, open('datasets.p', 'wb'))
+    pickle.dump(g, open(os.path.join(config.APP_DIR, 'datasets.p'), 'wb'))
 
     print('Datasets graph stored')
 
