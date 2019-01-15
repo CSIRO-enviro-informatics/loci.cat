@@ -37,6 +37,9 @@
                         <li><a href="{{ item[0] }}">{{ item[1] }}</a></li>
                     {% endfor %}
                 </ul>
+                {% if not register_items %}
+                    <p><em>Coming soon!</em></p>
+                {% endif %}
             </div>
             <div id="pagination">
                 {%  if pagination.links %}
