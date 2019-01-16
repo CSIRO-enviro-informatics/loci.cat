@@ -27,7 +27,7 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
                     # loop for all the labels of this subject
                     # TODO: loop by dct:title, not rdfs:label
                     for t in g.objects(s, URIRef('http://www.w3.org/2000/01/rdf-schema#label')):
-                        self.register_items.append((str(s), str(t), None))
+                        self.register_items.append((self.request.url_root + 'dataset/?uri=' + str(s), str(t), None))
                 if len(self.register_items) == per_page:  # ensure we only list as many as the per_page
                     break
 

@@ -3,6 +3,8 @@ import locicat.config as config
 import markdown
 from flask import Markup
 from locicat.view.register import LociRegisterRenderer
+from locicat.model.dataset_renderer import DatasetRenderer
+import harvester
 
 routes = Blueprint('routes', __name__)
 
@@ -17,6 +19,11 @@ def index():
 
 @routes.route('/dataset/')
 def datasets():
+    uri = request.values.get('uri')
+    if uri:
+        return DatasetRenderer(uri, request).render()
+
+    # Load the register
     renderer = LociRegisterRenderer(
         request,
         '',
@@ -27,6 +34,7 @@ def datasets():
         super_register=config.URI_BASE)
 
     return renderer.render()
+
 
 
 @routes.route('/linkset/')

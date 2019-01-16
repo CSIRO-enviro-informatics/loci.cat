@@ -1,7 +1,8 @@
 table, th, td {
-    border: 1px solid black;
     text-align: left;
 }
+
+
 
 h1 {
     color: #D2875E; /*rgb(171, 132, 118);*/
