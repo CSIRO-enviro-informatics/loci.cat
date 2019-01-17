@@ -93,7 +93,7 @@ class DCAT_queries():
             return row['s']
 
 
-class DCATDataDistributionService():
+class DCATModel():
     def __init__(self, uri, g):
                  # contributors,
                  # creators,
@@ -120,9 +120,9 @@ class DCATDataDistributionService():
 
 class DatasetRenderer(Renderer):
     def __init__(self, uri, request):
-        self.g = Graph().parse(uri+'.ttl', format='turtle')
+        self.g = harvester.get_graphs()#Graph().parse(uri+'.ttl', format='turtle')
 
-        self.DCATDataset = DCATDataDistributionService(uri, self.g)
+        self.DCATDataset = DCATModel(uri, self.g)
 
         super(DatasetRenderer, self).__init__(request, uri, self.get_views(), 'dcat')
 

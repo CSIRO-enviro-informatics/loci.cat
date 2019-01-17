@@ -1,8 +1,10 @@
 from flask import Response
 import pyldapi
 import harvester
-from rdflib import URIRef, Literal
+from rdflib import URIRef, Literal, RDF
+from rdflib.namespace import DCTERMS, DC
 import locicat.config as config
+from harvester.config import DATASETS
 
 
 class LociRegisterRenderer(pyldapi.RegisterRenderer):
@@ -25,9 +27,11 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
             for i, s in enumerate(g.subjects(URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), URIRef(cic))):
                 if i >= start:
                     # loop for all the labels of this subject
-                    # TODO: loop by dct:title, not rdfs:label
-                    for t in g.objects(s, URIRef('http://www.w3.org/2000/01/rdf-schema#label')):
-                        self.register_items.append((self.request.url_root + 'dataset/?uri=' + str(s), str(t), None))
+                    for t in g.objects(s, DCTERMS.title):
+                        if cic == config.URI_DATASET_CLASS and str(s) in DATASETS:
+                            self.register_items.append((self.request.url_root + 'dataset/?uri=' + str(s), str(t), None))
+                        elif cic == config.URI_LINKSET_CLASS:
+                            self.register_items.append((self.request.url_root + 'linkset/?uri=' + str(s), str(t), None))
                 if len(self.register_items) == per_page:  # ensure we only list as many as the per_page
                     break
 

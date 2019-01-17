@@ -21,6 +21,7 @@ def index():
 def datasets():
     uri = request.values.get('uri')
     if uri:
+        # Load the single instance
         return DatasetRenderer(uri, request).render()
 
     # Load the register
@@ -39,6 +40,12 @@ def datasets():
 
 @routes.route('/linkset/')
 def linksets():
+    uri = request.values.get('uri')
+    if uri:
+        # Load the single instance
+        return uri
+
+    # Load the register
     renderer = LociRegisterRenderer(
         request,
         '',

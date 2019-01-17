@@ -70,9 +70,21 @@ def harvest_datasets():
 def harvest_linksets():
     print('Harvesting Linksets')
     print('---------------')
-    # TODO: implement harvest_linksets
-    pass
+    g = Graph()
+    for l in config.LINKSETS:
+        print('Harvesting {}'.format(l))
+        r = requests.get(l, headers={'Accept': 'text/turtle'})
+        g.parse(data=r.content.decode('utf-8'), format='turtle')
+        print('From {} got {} triples'.format(l, len(g)))
 
+    # expand the graph
+    owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(g)
+    print('Expanded to {}'.format(len(g)))
+
+    # pickle the graph for page loads until next refresh
+    pickle.dump(g, open(os.path.join(config.APP_DIR, 'linksets.p'), 'wb'))
+    print('Linksets graph stored')
+    return g
 
 def harvest():
     harvest_defs()
@@ -89,24 +101,41 @@ def load_graph(graph_file):
         return None
 
 
-def get_graphs():
+def get_dataset_graphs():
     g = Graph()
-
-    o = load_graph('defs.p')
-    if not o:
-        o = harvest_defs()
-    g += o
-
     d = load_graph('datasets.p')
     if not d:
         d = harvest_datasets()
     g += d
+    return g
 
-    # TODO: include Linksets in get_graphs
-    # l = load_graph('linksets.p')
-    # if not l:
-    #     l = harvest_linksets()
-    # g += l
+
+def get_graphs():
+    # load an owlrl-expanded graph
+    g = load_graph('all.p')
+    if not g:
+        g = Graph()
+        o = load_graph('defs.p')
+        if not o:
+            o = harvest_defs()
+        g += o
+
+        d = load_graph('datasets.p')
+        if not d:
+            d = harvest_datasets()
+        g += d
+
+        l = load_graph('linksets.p')
+        if not l:
+            l = harvest_linksets()
+        g += l
+
+        # make new inferences with the combined graph
+        print('Currently all graphs combined has {} triples'.format(len(g)))
+        owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(g)
+        print('Expanded to {}'.format(len(g)))
+
+        pickle.dump(g, open(os.path.join(config.APP_DIR, 'all.p'), 'wb'))
 
     return g
 
