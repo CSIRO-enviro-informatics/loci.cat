@@ -2,12 +2,38 @@ from flask import Response
 import pyldapi
 import harvester
 from rdflib import URIRef, Literal, RDF
-from rdflib.namespace import DCTERMS, DC
+from rdflib.namespace import DCTERMS, DC, OWL, RDFS
 import locicat.config as config
-from harvester.config import DATASETS
+from harvester.config import DATASETS, DEFS
 
 
 class LociRegisterRenderer(pyldapi.RegisterRenderer):
+    def _get_def_items(self, s, g):
+        items = []
+        # for t in g.objects(s, RDFS.label):
+        #     if cic == config.URI_DEF_CLASS and str(s) in DEFS:
+        #         items.append((self.request.url_root + 'def/?uri=' + str(s), str(t), None))
+        results = g.query("""
+            PREFIX dct: <http://purl.org/dc/terms/>
+            PREFIX dc: <http://purl.org/dc/elements/1.1/>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>    
+            SELECT *
+            WHERE {{
+                <{}> (dct:title | dc:title | rdfs:label) ?t .
+            }}""".format(s))
+        for row in results:
+            items.append((self.request.url_root + 'def/?uri=' + str(s), str(row['t']), None))
+        return items
+
+    def _get_subjects_by_title(self, s, cic, g):
+        items = []
+        for t in g.objects(s, DCTERMS.title):
+            if cic == config.URI_DATASET_CLASS and str(s) in DATASETS:
+                items.append((self.request.url_root + 'dataset/?uri=' + str(s), str(t), None))
+            elif cic == config.URI_LINKSET_CLASS:
+                items.append((self.request.url_root + 'linkset/?uri=' + str(s), str(t), None))
+        return items
+
     def _get_items_from_graph(self, page, per_page):
         g = harvester.get_graphs()
         cic = self.contained_item_classes[0]
@@ -23,15 +49,18 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
             else:
                 raise RuntimeError("Cannot get register objects")
 
+            # for s, p, o in g.triples((URIRef('http://gnafld.net/def/gnaf'), None, None)):
+            #     print(s, p, o)
+
             # loop for all subjects of the cic type
-            for i, s in enumerate(g.subjects(URIRef('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'), URIRef(cic))):
+            for i, s in enumerate(g.subjects(RDF.type, URIRef(cic))):
                 if i >= start:
                     # loop for all the labels of this subject
-                    for t in g.objects(s, DCTERMS.title):
-                        if cic == config.URI_DATASET_CLASS and str(s) in DATASETS:
-                            self.register_items.append((self.request.url_root + 'dataset/?uri=' + str(s), str(t), None))
-                        elif cic == config.URI_LINKSET_CLASS:
-                            self.register_items.append((self.request.url_root + 'linkset/?uri=' + str(s), str(t), None))
+                    if cic == config.URI_DATASET_CLASS or cic == config.URI_LINKSET_CLASS:
+                        self.register_items += self._get_subjects_by_title(s, cic, g)
+                    elif cic == config.URI_DEF_CLASS and str(s) in DEFS:
+                        self.register_items += self._get_def_items(s, g)
+
                 if len(self.register_items) == per_page:  # ensure we only list as many as the per_page
                     break
 

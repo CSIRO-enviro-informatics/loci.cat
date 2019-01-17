@@ -61,6 +61,12 @@ def linksets():
 
 @routes.route('/def/')
 def defs():
+    uri = request.values.get('uri')
+    if uri:
+        # Load the single instance
+        return uri
+
+    # Load the register
     renderer = LociRegisterRenderer(
         request,
         '',
