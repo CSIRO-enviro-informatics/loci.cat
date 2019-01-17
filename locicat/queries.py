@@ -1,3 +1,120 @@
+class DefQueries():
+    @staticmethod
+    def get_title(uri, g):
+        title = g.query("""
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX dct: <http://purl.org/dc/terms/>
+            PREFIX dc: <http://purl.org/dc/elements/1.1/>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            SELECT *
+            WHERE {{
+                <{}> (dct:title | dc:title | rdfs:label | skos:prefLabel) ?t .
+            }}""".format(uri))
+        for row in title:
+            return row['t']
+
+    @staticmethod
+    def get_versionIRI(uri, g):
+        v = g.query("""
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            SELECT *
+            WHERE {{
+                <{}> owl:versionIRI ?v
+            }}""".format(uri))
+        for row in v:
+            return row['v']
+
+    @staticmethod
+    def get_versionInfo(uri, g):
+        v = g.query("""
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            SELECT *
+            WHERE {{
+                <{}> owl:versionInfo ?v
+            }}""".format(uri))
+        for row in v:
+            return row['v']
+
+    @staticmethod
+    def get_description(uri, g):
+        result = DCATQueries.get_description(uri, g)
+        if result:
+            return result
+        else:
+            d = g.query("""
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                SELECT * 
+                WHERE {{
+                    <{}> rdfs:comment ?d .
+                }}""".format(uri))
+            for row in d:
+                return row['d']
+
+    @staticmethod
+    def get_imports(uri, g):
+        result = g.query("""
+            PREFIX owl: <http://www.w3.org/2002/07/owl#>
+            SELECT *
+            WHERE {{
+                <{}> owl:imports ?import
+            }}""".format(uri))
+        imports = []
+        for row in result:
+            imports.append(row['import'])
+        return imports
+
+    @staticmethod
+    def get_seeAlso(uri, g):
+        s = g.query("""
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            SELECT *
+            WHERE {{
+                <{}> rdfs:seeAlso ?s
+            }}""".format(uri))
+        for row in s:
+            return row['s']
+
+    @staticmethod
+    def get_creators(uri, g):
+        return DCATQueries.get_creators(uri, g)
+
+    @staticmethod
+    def get_date(uri, g):
+        d = g.query("""
+            PREFIX dc: <http://purl.org/dc/elements/1.1/>
+            PREFIX dct: <http://purl.org/dc/terms/>
+            SELECT *
+            WHERE {{
+                <{}> (dc:date | dct:date) ?d
+            }}""".format(uri))
+        for row in d:
+            return row['d']
+
+    @staticmethod
+    def get_modified(uri, g):
+        m = g.query("""
+            PREFIX dct: <http://purl.org/dc/terms/>
+            PREFIX dc: <http://purl.org/dc/elements/1.1/>
+            SELECT *
+            WHERE {{
+                <{}> (dct:modified | dc:modified) ?m
+            }}""".format(uri))
+        for row in m:
+            return row['m']
+
+    @staticmethod
+    def get_rights(uri, g):
+        r = g.query("""
+            PREFIX dct: <http://purl.org/dc/terms/>
+            PREFIX dc: <http://purl.org/dc/elements/1.1/>
+            SELECT *
+            WHERE {{
+                <{}> (dct:rights | dc:rights) ?r
+            }}""".format(uri))
+        for row in r:
+            return row['r']
+
+
 class LinksetQueries():
     @staticmethod
     def get_title(uri, g):

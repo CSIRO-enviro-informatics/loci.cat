@@ -1,0 +1,90 @@
+{% extends "page.html" %}
+
+{% block content %}
+    <h1><a href="{{ model.uri }}">
+        {% if model.title %}
+            {{ model.title }}
+        {% else %}
+            {{ model.uri }}
+        {% endif %}
+    </a></h1>
+
+    {% if view %}
+        <h2>{{ view }} view</h2>
+    {% endif %}
+
+    <table class="metadata">
+        {% if model.creators %}
+            <tr>
+                <th>Creators:</th>
+                <td>
+                    {% for c in model.creators %}
+                        {{ format(c) }}<br>
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endif %}
+
+        {% if model.date %}
+            <tr>
+                <th>Date:</th>
+                <td>{{ format(model.date) }}</td>
+            </tr>
+        {% endif %}
+
+        {% if model.modified %}
+            <tr>
+                <th>Date Modified:</th>
+                <td>{{ format(model.modified) }}</td>
+            </tr>
+        {% endif %}
+
+        {% if model.versionIRI %}
+            <tr>
+                <th>Version IRI:</th>
+                <td>{{ format(model.versionIRI) }}</td>
+            </tr>
+        {% endif %}
+
+        {% if model.versionInfo %}
+            <tr>
+                <th>Version Info:</th>
+                <td>{{ format(model.versionInfo) }}</td>
+            </tr>
+        {% endif %}
+
+        {% if model.description %}
+            <tr>
+                <th>Description:</th>
+                <td>{{ format(model.description, markdown=True) }}</td>
+            </tr>
+        {% endif %}
+
+        {% if model.imports %}
+            <tr>
+                <th>Imported Ontologies:</th>
+                <td>
+                    {% for ont in model.imports %}
+                        {{ format(ont) }}<br>
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endif %}
+
+        {% if model.rights %}
+            <tr>
+                <th>Rights:</th>
+                <td>{{ format(model.rights) }}</td>
+            </tr>
+        {% endif %}
+
+        {% if model.seeAlso %}
+            <tr>
+                <th>See Also:</th>
+                <td>{{ format(model.seeAlso) }}</td>
+            </tr>
+        {% endif %}
+
+    </table>
+
+{% endblock %}

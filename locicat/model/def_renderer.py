@@ -1,30 +1,32 @@
 from pyldapi import Renderer, View
+from flask import Response, render_template
 import harvester
 from locicat import tools
-from flask import render_template, Response
-from locicat.queries import LinksetQueries
+from locicat.queries import DefQueries
 
 
-class LinksetModel():
+class DefModel():
     def __init__(self, uri, g):
         self.uri = uri
-        self.title = LinksetQueries.get_title(uri, g)
-        self.description = LinksetQueries.get_description(uri, g)
-        self.publisher = LinksetQueries.get_publisher(uri, g)
-        self.issued = LinksetQueries.get_issued(uri, g)
-        self.modified = LinksetQueries.get_modified(uri, g)
-        self.contributors = LinksetQueries.get_contributors(uri, g)
-        self.objectsTarget = LinksetQueries.get_objectsTarget(uri, g)
-        self.subjectsTarget = LinksetQueries.get_subjectsTarget(uri, g)
+        self.creators = DefQueries.get_creators(uri, g)
+        self.rights = DefQueries.get_rights(uri, g)
+        self.modified = DefQueries.get_modified(uri, g)
+        self.date = DefQueries.get_date(uri, g)
+        self.versionIRI = DefQueries.get_versionIRI(uri, g)
+        self.imports = DefQueries.get_imports(uri, g)
+        self.description = DefQueries.get_description(uri, g)
+        self.title = DefQueries.get_title(uri, g)
+        self.seeAlso = DefQueries.get_seeAlso(uri, g)
+        self.versionInfo = DefQueries.get_versionInfo(uri, g)
 
 
-class LinksetRenderer(Renderer):
+class DefRenderer(Renderer):
     def __init__(self, uri, request):
         g = harvester.get_graphs()
 
-        self.model = LinksetModel(uri, g)
+        self.model = DefModel(uri, g)
 
-        super(LinksetRenderer, self).__init__(request, uri, self._get_views(), 'loci')
+        super(DefRenderer, self).__init__(request, uri, self._get_views(), 'loci')
 
     def render(self):
         if self.view == 'alternates':
@@ -47,7 +49,7 @@ class LinksetRenderer(Renderer):
 
         return Response(
             render_template(
-                'linkset.html',
+                'ontology.html',
                 **_template_context
             ),
             headers=self.headers
@@ -56,8 +58,8 @@ class LinksetRenderer(Renderer):
     def _get_views(self):
         return {
             'loci': View(
-                'Location Index (Loc-I) Linkset',
-                'This Loc-I view provides basic metadata information on a Loc-I Linkset.',
+                'Location Index (Loc-I) Definitional resource',
+                'This Loc-I view provides basic metadata information on a Loc-I definitional resource.',
                 ['text/html', 'application/json'] + self.RDF_MIMETYPES,
                 'text/html',
                 languages=['en'],  # default 'en' only for now

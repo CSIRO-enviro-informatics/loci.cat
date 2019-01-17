@@ -49,16 +49,13 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
             else:
                 raise RuntimeError("Cannot get register objects")
 
-            # for s, p, o in g.triples((URIRef('http://gnafld.net/def/gnaf'), None, None)):
-            #     print(s, p, o)
-
             # loop for all subjects of the cic type
             for i, s in enumerate(g.subjects(RDF.type, URIRef(cic))):
                 if i >= start:
                     # loop for all the labels of this subject
                     if cic == config.URI_DATASET_CLASS or cic == config.URI_LINKSET_CLASS:
                         self.register_items += self._get_subjects_by_title(s, cic, g)
-                    elif cic == config.URI_DEF_CLASS and str(s) in DEFS:
+                    elif cic == config.URI_DEF_CLASS:
                         self.register_items += self._get_def_items(s, g)
 
                 if len(self.register_items) == per_page:  # ensure we only list as many as the per_page
