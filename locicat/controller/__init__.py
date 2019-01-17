@@ -4,6 +4,7 @@ import markdown
 from flask import Markup
 from locicat.view.register import LociRegisterRenderer
 from locicat.model.dataset_renderer import DatasetRenderer
+from locicat.model.linkset_renderer import LinksetRenderer
 import harvester
 
 routes = Blueprint('routes', __name__)
@@ -43,7 +44,7 @@ def linksets():
     uri = request.values.get('uri')
     if uri:
         # Load the single instance
-        return uri
+        return LinksetRenderer(uri, request).render()
 
     # Load the register
     renderer = LociRegisterRenderer(

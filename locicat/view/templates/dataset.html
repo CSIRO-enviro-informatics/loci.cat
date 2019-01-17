@@ -40,7 +40,7 @@
         {% if model.description %}
             <tr>
                 <th>Description:</th>
-                <td>{{ model.description }}</td>
+                <td>{{ format(model.description, markdown=True) }}</td>
             </tr>
         {% endif %}
 

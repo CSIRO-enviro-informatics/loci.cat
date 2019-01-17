@@ -1,5 +1,11 @@
 import re
 from rdflib import URIRef
+import markdown
+
+
+def parse_markdown(s):
+    return markdown.markdown(s)
+
 
 def is_email(email):
     """
