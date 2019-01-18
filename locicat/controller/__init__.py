@@ -32,6 +32,7 @@ def datasets():
         '',
         "Dataset Register",
         "Register of all VoID Datasets",
+        LociRegisterRenderer.DATASET_REGISTER,
         [config.URI_DATASET_CLASS],
         0,
         super_register=config.URI_BASE)
@@ -53,6 +54,7 @@ def linksets():
         '',
         "Linksets Register",
         "Register of all VoID Linksets",
+        LociRegisterRenderer.LINKSET_REGISTER,
         [config.URI_LINKSET_CLASS],
         0,
         super_register=config.URI_BASE)
@@ -73,6 +75,7 @@ def defs():
         '',
         "Definitional Resources Register",
         "Register of all Definitional Resources",
+        LociRegisterRenderer.DEFS_REGISTER,
         [config.URI_DEF_CLASS],
         0,
         super_register=config.URI_BASE)

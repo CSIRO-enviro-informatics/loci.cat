@@ -51,7 +51,7 @@ def harvest_datasets():
     g = Graph()
     for d in config.DATASETS:
         print('Harvesting {}'.format(d))
-        r = requests.get(d, headers={'Accept': 'text/turtle'})
+        r = requests.get(d, params={'_view': 'void', '_format': 'text/turtle'})
         g.parse(data=r.content.decode('utf-8'), format='turtle')
         print('From {} got {} triples'.format(d, len(g)))
 
@@ -131,7 +131,7 @@ def get_graphs():
         g += l
 
         # make new inferences with the combined graph
-        print('Currently all graphs combined has {} triples'.format(len(g)))
+        print('Currently all graphs combined have {} triples'.format(len(g)))
         owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(g)
         print('Expanded to {}'.format(len(g)))
 
