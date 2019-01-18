@@ -90,6 +90,7 @@ def tools():
         'http://loci.cat/tool/',
         "Tools Register",
         "Register of all Tools",
+        LociRegisterRenderer.TOOLS_REGISTER,
         [config.URI_TOOL_CLASS],
         0,
         super_register=config.URI_BASE)
