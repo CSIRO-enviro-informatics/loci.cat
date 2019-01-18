@@ -127,6 +127,8 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
             self.label = 'VoID Linksets'
         elif cic == config.URI_DEF_CLASS:  # TODO: cater for other def types, not just onts
             self.label = 'Definitional Resource'
+        elif cic == config.URI_TOOL_CLASS:
+            self.label = 'Tools Resource'
         else:
             raise RuntimeError("Cannot get register objects")
 
