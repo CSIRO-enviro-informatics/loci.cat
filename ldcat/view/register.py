@@ -1,10 +1,11 @@
 from flask import Response
 import pyldapi
-import harvester
 from rdflib import URIRef, Literal, RDF
 from rdflib.namespace import DCTERMS, DC, OWL, RDFS
 import ldcat.config as config
 from harvester.config import DATASETS, DEFS
+import pickle
+from os import path
 
 
 class LociRegisterRenderer(pyldapi.RegisterRenderer):
@@ -80,7 +81,6 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
 
     def _get_dataset_items(self, s, g):
         result = g.query("""
-            PREFIX : <http://linked.data.gov.au/def/loci#>
             PREFIX dct: <http://purl.org/dc/terms/>
             PREFIX dc: <http://purl.org/dc/elements/1.1/>
             PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -116,21 +116,26 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
         return uris
 
     def _get_items_from_graph(self, register_type, page, per_page):
-        g = harvester.get_graphs()
         cic = self.contained_item_classes[0]
         start = (page - 1) * per_page  # where in the list of all items to start listing from
 
         # try:
         if cic == config.URI_DATASET_CLASS:
             self.label = 'VoID Datasets'
+            graph_filename = 'datasets.p'
         elif cic == config.URI_LINKSET_CLASS:
             self.label = 'VoID Linksets'
+            graph_filename = 'linksets.p'
         elif cic == config.URI_DEF_CLASS:  # TODO: cater for other def types, not just onts
             self.label = 'Definitional Resource'
+            graph_filename = 'defs.p'
         elif cic == config.URI_TOOL_CLASS:
             self.label = 'Tools Resource'
+            graph_filename = 'tools.p'
         else:
             raise RuntimeError("Cannot get register objects")
+
+        g = pickle.load(open(path.join(path.dirname(config.APP_DIR), 'harvester', graph_filename), 'rb'))
 
         approved_uris = self._get_approved_uris(g, cic)
 
