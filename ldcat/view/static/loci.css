@@ -5,7 +5,7 @@ table, th, td {
 
 
 h1 {
-    color: darkblue; /*rgb(171, 132, 118);*/
+    color: #D2875E; /*rgb(171, 132, 118);*/
     font-family: 'FontSiteSans Light', Verdana, Arial, Helvetica, sans-serif;
     font-size: 3em;
     letter-spacing: -0.045em;
@@ -69,7 +69,7 @@ body {
     padding: 20px;
 }
 #header {
-    background-color: LightGray; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
+    background-color: #FFD5BF; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
     padding: 20px;
 }
 
@@ -112,7 +112,7 @@ ul {
 }
 
 #footer {
-    background-color: #F8F8F8; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
+    background-color: #FFD5BF; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
     padding: 5px 20px 5px 20px;
     text-align: center;
     font-style: italic;
@@ -125,12 +125,12 @@ code {
 #alternates {
     float: right;
     display: block;
-    background-color: #F8F8F8; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
+    background-color: #FFD5BF; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
     padding: 10px;
     width:200px;
     text-align:center;
 }
 
 a {
-    color: darkblue;
+    color: #AA5D33;
 }
