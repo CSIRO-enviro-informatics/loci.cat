@@ -1,7 +1,7 @@
 import logging
-import locicat.config as config
+import ldcat.config as config
 from flask import Flask
-import locicat.controller as cont
+import ldcat.controller as cont
 
 app = Flask(__name__, template_folder=config.TEMPLATES_DIR, static_folder=config.STATIC_DIR)
 app.register_blueprint(cont.routes)

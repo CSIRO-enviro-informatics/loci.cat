@@ -1,8 +1,8 @@
 from pyldapi import Renderer, View
 import harvester
-from locicat import tools
+from ldcat import tools
 from flask import render_template, Response
-from locicat.queries import LinksetQueries
+from ldcat.queries import LinksetQueries
 
 
 class LinksetModel():

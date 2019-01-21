@@ -1,8 +1,8 @@
 from pyldapi import Renderer, View
 from flask import Response, render_template
 import harvester
-from locicat import tools
-from locicat.queries import DefQueries
+from ldcat import tools
+from ldcat.queries import DefQueries
 
 
 class DefModel():

@@ -1,8 +1,8 @@
 from pyldapi import Renderer, View
 import harvester
 from flask import Response, render_template
-from locicat import tools
-from locicat.queries import DCATQueries
+from ldcat import tools
+from ldcat.queries import DCATQueries
 
 
 class DCATModel():

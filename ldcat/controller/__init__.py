@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template, redirect, request
-import locicat.config as config
+import ldcat.config as config
 import markdown
 from flask import Markup
-from locicat.view.register import LociRegisterRenderer
-from locicat.model.dataset_renderer import DatasetRenderer
-from locicat.model.linkset_renderer import LinksetRenderer
-from locicat.model.def_renderer import DefRenderer
+from ldcat.view.register import LociRegisterRenderer
+from ldcat.model.dataset_renderer import DatasetRenderer
+from ldcat.model.linkset_renderer import LinksetRenderer
+from ldcat.model.def_renderer import DefRenderer
 import harvester
 
 routes = Blueprint('routes', __name__)

@@ -3,7 +3,7 @@ import pyldapi
 import harvester
 from rdflib import URIRef, Literal, RDF
 from rdflib.namespace import DCTERMS, DC, OWL, RDFS
-import locicat.config as config
+import ldcat.config as config
 from harvester.config import DATASETS, DEFS
 
 
