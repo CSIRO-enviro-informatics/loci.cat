@@ -1,6 +1,6 @@
 from pyldapi import Renderer, View
 import harvester
-from flask import Response, render_template
+from flask import Response, render_template, redirect
 from ldcat import tools
 from ldcat.queries import DCATQueries
 
@@ -37,7 +37,7 @@ class DatasetRenderer(Renderer):
                 return self._render_dcat_html()
 
     def _render_dcat_rdf(self):
-        raise NotImplementedError
+        return redirect(self.uri + '?_view=' + self.view + '&_format=' + self.format)
 
     def _render_dcat_html(self):
         _template_context = {

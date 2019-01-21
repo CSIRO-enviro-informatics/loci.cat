@@ -1,6 +1,7 @@
 {% extends "page.html" %}
 
 {% block content %}
+    {% include "alternates_button.html" %}
     <h1><a href="{{ model.uri }}">
         {% if model.title %}
             {{ model.title }}
