@@ -86,6 +86,7 @@ def harvest_linksets():
     print('Linksets graph stored')
     return g
 
+
 def harvest():
     harvest_defs()
     harvest_datasets()
