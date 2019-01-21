@@ -6,12 +6,12 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='vanilla.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='ochre.css') }}" />
 </head>
 <body>
     <div id="widther">
-        <a href="{{ url_for('routes.about') }}">
-            <em>Logo Placeholder</em>
+        <a href="http://linked.data.gov.au">
+            <img src="{{ url_for('static', filename='agldwg-logo-ochre-150.png') }}" title="AGLDWG logo"/>
         </a>
         <div id="header">
             <div style="float:left;">
@@ -19,10 +19,11 @@
             </div>
             <div style="float:right;">
                 <a href="{{ url_for('routes.index') }}">Catalogue Home</a> |
+                <a href="{{ url_for('routes.about') }}">About</a> &nbsp;&nbsp;&nbsp; Registers:
                 <a href="{{ url_for('routes.datasets') }}">Datasets</a> |
-                <a href="{{ url_for('routes.linksets') }}">Linksets</a> |
-                <a href="{{ url_for('routes.defs') }}">Definitional Items</a> |
-                <a href="{{ url_for('routes.about') }}">About</a>
+                <!--<a href="{{ url_for('routes.linksets') }}">Linksets</a> |-->
+                <a href="{{ url_for('routes.defs') }}">Definitional Items</a>
+
             </div>
             <div style="clear:both;"></div>
         </div>
