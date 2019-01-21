@@ -1,39 +1,33 @@
 {% extends "page.html" %}
 
 {% block content %}
-    <div id="alternates">
+    <div class="altview">
         <h4>Alternates View</h4>
         <p>See this content according to other views and formats:</p>
         <p><a href="{{ url_for('routes.index', _view='alternates') }}"><em>Alternates</em> View</a></p>
     </div>
-    <h1>loci.cat</h1>
+    <h1>Australian Government Linked Data Working Group - LD Catalogue</h1>
     <p>
-        This <code>loci.cat</code> website is the LocI project's Linked Data asset catalogue. For technical, legal and
+        This catalogue lists <a href="https://www.w3.org/standards/semanticweb/data">Linked Data</a> assets published
+        using namespaces provided by this Working Group. For technical, legal and
         contact information, see the <a href="{{ url_for('routes.about') }}">About page</a>.
     </p>
-    <h3>More LocI information</h3>
+    <h3>Use</h3>
     <p>
-        The LocI project will soon have its own homepage and that will be listed here.
-    </p>
-    <h3>Register of Registers</h3>
-    <p>
-        In addition to this page being a basic catalogue homepage, it is also a <em>Register of Registers</em>, that is
-        it lists all the other <em>registers</em> (lists of items) contained in the catalogue.
-    </p>
-    <p>
-        The registers this catalogue contains are for:
+        This catalogue contains lists (registers) of:
     </p>
     <ol>
         <li><a href="{{ url_for('routes.datasets') }}">Datasets</a></li>
-        <li><a href="{{ url_for('routes.linksets') }}">Linksets</a></li>
         <li><a href="{{ url_for('routes.defs') }}">Definitional Items</a></li>
-        <li><a href="{{ url_for('routes.tools') }}">Tools</a></li>
     </ol>
+    <p>
+        More types of items may be added shortly.
+    </p>
     <h3>Linked Data access</h3>
     <p>
-        This catalogue is available as a <em>Linked Data</em> set of resources. This means it is able to be accessed
-        according to defined information models and in a series of different formats for human and machine-readable
-        purposes.
+        This catalogue itself is available as a <em>Linked Data</em> set of resources. This means it is able to be
+        accessed according to Linked Data-defined information models (ontologies) in a series of different formats for
+        human and machine-readable purposes.
     </p>
     <p>
         To view this page's information in according to defined information models and in other formats, see the
