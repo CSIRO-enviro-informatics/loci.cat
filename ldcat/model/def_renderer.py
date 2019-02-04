@@ -22,7 +22,10 @@ class DefModel():
 
 class DefRenderer(Renderer):
     def __init__(self, uri, request):
-        g = harvester.get_graphs()
+        try:
+            g = harvester.load_graph('defs.p')
+        except:
+            g = harvester.get_graphs()
 
         self.model = DefModel(uri, g)
 
