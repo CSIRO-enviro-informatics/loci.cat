@@ -6,6 +6,7 @@ import ldcat.config as config
 from harvester.config import DATASETS, DEFS
 import pickle
 from os import path
+import harvester
 
 
 class LociRegisterRenderer(pyldapi.RegisterRenderer):
@@ -135,7 +136,10 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
         else:
             raise RuntimeError("Cannot get register objects")
 
-        g = pickle.load(open(path.join(path.dirname(config.APP_DIR), 'harvester', graph_filename), 'rb'))
+        try:
+            g = pickle.load(open(path.join(path.dirname(config.APP_DIR), 'harvester', graph_filename), 'rb'))
+        except:
+            g = harvester.get_graphs()
 
         approved_uris = self._get_approved_uris(g, cic)
 
