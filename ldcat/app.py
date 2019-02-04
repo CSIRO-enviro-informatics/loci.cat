@@ -7,6 +7,12 @@ app = Flask(__name__, template_folder=config.TEMPLATES_DIR, static_folder=config
 app.register_blueprint(cont.routes)
 
 
+@app.before_first_request
+def startup():
+    import harvester
+    harvester.generate_graph_pickles()
+
+
 # run the Flask app
 if __name__ == '__main__':
     logging.basicConfig(filename=config.LOGFILE,
