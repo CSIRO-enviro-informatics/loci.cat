@@ -21,7 +21,10 @@ class LinksetModel():
 
 class LinksetRenderer(Renderer):
     def __init__(self, uri, request):
-        g = harvester.get_graphs()
+        try:
+            g = harvester.load_graph('linksets.p')
+        except:
+            g = harvester.get_graphs()
 
         self.model = LinksetModel(uri, g)
 

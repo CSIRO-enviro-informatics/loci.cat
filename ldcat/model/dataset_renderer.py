@@ -21,7 +21,10 @@ class DCATModel():
 
 class DatasetRenderer(Renderer):
     def __init__(self, uri, request):
-        g = harvester.get_graphs()
+        try:
+            g = harvester.load_graph('datasets.p')
+        except:
+            g = harvester.get_graphs()
 
         self.DCATDataset = DCATModel(uri, g)
 

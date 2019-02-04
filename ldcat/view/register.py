@@ -110,6 +110,8 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
 
     def _get_approved_uris(self, g, cic):
         uris = []
+        if g is None:
+            return uris
         for s in g.subjects(RDF.type, URIRef(cic)):
             for publisher in g.objects(s, DCTERMS.publisher):
                 if str(publisher) in config.PUBLISHERS:

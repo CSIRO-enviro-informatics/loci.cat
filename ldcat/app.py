@@ -10,7 +10,7 @@ app.register_blueprint(cont.routes)
 @app.before_first_request
 def startup():
     import harvester
-    harvester.generate_graph_pickles()
+    harvester.harvest()
 
 
 # run the Flask app

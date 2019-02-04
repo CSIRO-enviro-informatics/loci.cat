@@ -3,6 +3,8 @@ from os import path
 
 APP_DIR = path.dirname(__file__)
 
+DEF_MIXIN = ''
+
 DEFS = [
     'http://linked.data.gov.au/def/loci',
     'http://linked.data.gov.au/def/asgs',
@@ -19,3 +21,5 @@ DATASETS = [
 LINKSETS = [
     'https://raw.githubusercontent.com/CSIRO-enviro-informatics/addressescatchments-linkset/master/header.ttl'
 ]
+
+TOOLS = []
