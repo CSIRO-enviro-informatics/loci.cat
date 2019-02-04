@@ -112,7 +112,7 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
         uris = []
         for s in g.subjects(RDF.type, URIRef(cic)):
             for publisher in g.objects(s, DCTERMS.publisher):
-                if str(publisher) in config.LOCI_PUBLISHERS:
+                if str(publisher) in config.PUBLISHERS:
                     uris.append(str(s))
         return uris
 
