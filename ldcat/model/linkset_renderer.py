@@ -16,6 +16,7 @@ class LinksetModel():
         self.contributors = LinksetQueries.get_contributors(uri, g)
         self.objectsTarget = LinksetQueries.get_objectsTarget(uri, g)
         self.subjectsTarget = LinksetQueries.get_subjectsTarget(uri, g)
+        self.prov_plan = LinksetQueries.get_prov_plan(uri, g)
 
 
 class LinksetRenderer(Renderer):

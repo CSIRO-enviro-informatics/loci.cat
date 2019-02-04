@@ -74,7 +74,10 @@ def harvest_linksets():
     for l in config.LINKSETS:
         print('Harvesting {}'.format(l))
         r = requests.get(l, headers={'Accept': 'text/turtle'})
-        g.parse(data=r.content.decode('utf-8'), format='turtle')
+        try:
+            g.parse(data=r.content.decode('utf-8'), format='turtle')
+        except Exception as e:
+            raise Exception(e)
         print('From {} got {} triples'.format(l, len(g)))
 
     # expand the graph

@@ -18,6 +18,16 @@ def is_email(email):
     return True if re.search(pattern, email) is not None else False
 
 
+def strip_mailto(email):
+    return email[7:]
+
+
+def contains_mailto(email):
+    if email[:7] == 'mailto:':
+        return True
+    return False
+
+
 def is_url(url):
     """
     Check if the url is a valid url.

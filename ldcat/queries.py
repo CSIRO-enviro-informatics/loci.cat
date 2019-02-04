@@ -186,6 +186,72 @@ class LinksetQueries():
         for row in s:
             return row['s']
 
+    @staticmethod
+    def get_prov_plan(uri, g):
+        s = g.query("""
+            PREFIX : <{}>
+            PREFIX loci: <http://linked.data.gov.au/def/loci/>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+            SELECT ?label ?text_source ?comment ?time ?name ?email ?extra
+            WHERE {{
+                : loci:hadGenerationMethod ?plan .
+                ?plan rdfs:label ?label .
+                ?plan prov:value ?text_source .
+                ?plan rdfs:comment ?comment .
+                ?plan prov:generatedAtTime ?time .
+                ?plan prov:wasAttributedTo ?person .
+                ?person vcard:fn ?name .
+                ?person vcard:hasEmail ?email .
+                ?person rdfs:seeAlso ?extra .
+            }}""".format(uri))
+        if len(s) > 0:
+            for row in s:
+                import requests
+                return {
+                    'label': row['label'],
+                    'text': requests.get(row['text_source']).text,
+                    'comment': row['comment'],
+                    'time': row['time'],
+                    'name': row['name'],
+                    'email': row['email'],
+                    'extra': row['extra']
+                }
+
+        s = g.query("""
+            PREFIX : <{}>
+            PREFIX loci: <http://linked.data.gov.au/def/loci/>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+            SELECT ?label ?text_source ?comment ?time ?name ?email ?extra
+            WHERE {{
+                : prov:wasGeneratedBy ?activity .
+                ?activity prov:qualifiedAssociation ?blank .
+                ?blank prov:hadPlan ?plan .
+                ?plan rdfs:label ?label .
+                ?plan prov:value ?text_source .
+                ?plan rdfs:comment ?comment .
+                ?plan prov:generatedAtTime ?time .
+                ?plan prov:wasAttributedTo ?person .
+                ?person vcard:fn ?name .
+                ?person vcard:hasEmail ?email .
+                ?person rdfs:seeAlso ?extra .
+            }}
+            """.format(uri))
+        for row in s:
+            import requests
+            return {
+                'label': row['label'],
+                'text': requests.get(row['text_source']).text,
+                'comment': row['comment'],
+                'time': row['time'],
+                'name': row['name'],
+                'email': row['email'],
+                'extra': row['extra']
+            }
+
 
 class DCATQueries():
     @staticmethod

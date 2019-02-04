@@ -137,7 +137,7 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
             raise RuntimeError("Cannot get register objects")
 
         try:
-            g = pickle.load(open(path.join(path.dirname(config.APP_DIR), 'harvester', graph_filename), 'rb'))
+            g = pickle.load(open(path.join(path.dirname(config.APP_DIR), 'harvester', 'all.p'), 'rb'))
         except:
             g = harvester.get_graphs()
 
