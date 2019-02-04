@@ -71,13 +71,17 @@ def harvest_linksets():
     print('Harvesting Linksets')
     print('---------------')
     g = Graph()
+
+    """TODO: Review this: Currently we need to add in the LocI Ontology so that it knows about LocI-specific things.
+    Without this, the catalogue won't know that a loci:Linkset is the same as a void:Linkset.
+    """
+    r = requests.get(config.DEF_MIXIN, headers={'Accept': 'text/turtle'})
+    g.parse(data=r.content.decode('utf-8'), format='turtle')
+
     for l in config.LINKSETS:
         print('Harvesting {}'.format(l))
         r = requests.get(l, headers={'Accept': 'text/turtle'})
-        try:
-            g.parse(data=r.content.decode('utf-8'), format='turtle')
-        except Exception as e:
-            raise Exception(e)
+        g.parse(data=r.content.decode('utf-8'), format='turtle')
         print('From {} got {} triples'.format(l, len(g)))
 
     # expand the graph
@@ -112,6 +116,25 @@ def get_dataset_graphs():
         d = harvest_datasets()
     g += d
     return g
+
+
+def generate_graph_pickles():
+    g = Graph()
+    o = harvest_defs()
+    g += o
+
+    d = harvest_datasets()
+    g += d
+
+    l = harvest_linksets()
+    g += l
+
+    # make new inferences with the combined graph
+    print('Currently all graphs combined have {} triples'.format(len(g)))
+    owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(g)
+    print('Expanded to {}'.format(len(g)))
+
+    pickle.dump(g, open(os.path.join(config.APP_DIR, 'all.p'), 'wb'))
 
 
 def get_graphs():
