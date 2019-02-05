@@ -10,7 +10,8 @@ app.register_blueprint(cont.routes)
 @app.before_first_request
 def startup():
     import harvester
-    harvester.harvest()
+    if harvester.config.HARVEST:
+        harvester.harvest()
 
 
 # run the Flask app
