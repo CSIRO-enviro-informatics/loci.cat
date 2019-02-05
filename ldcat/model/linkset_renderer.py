@@ -1,7 +1,7 @@
 from pyldapi import Renderer, View
 import harvester
 from ldcat import tools
-from flask import render_template, Response
+from flask import render_template, Response, redirect
 from ldcat.queries import LinksetQueries
 
 
@@ -22,11 +22,11 @@ class LinksetModel():
 class LinksetRenderer(Renderer):
     def __init__(self, uri, request):
         try:
-            g = harvester.load_graph('linksets.p')
+            self.g = harvester.load_graph('linksets.p')
         except:
-            g = harvester.get_graphs()
+            self.g = harvester.get_graphs()
 
-        self.model = LinksetModel(uri, g)
+        self.model = LinksetModel(uri, self.g)
 
         super(LinksetRenderer, self).__init__(request, uri, self._get_views(), 'loci')
 
@@ -40,7 +40,9 @@ class LinksetRenderer(Renderer):
                 return self._render_html()
 
     def _render_rdf(self):
-        raise NotImplementedError
+        # TODO: Implement when the URI resolves on the PID service.
+        # return redirect(self.uri + '?_view=' + self.view + '&_format=' + self.format)
+        return Response(response='<h1>501: Not Implemented</h1>', status=501)
 
     def _render_html(self):
         _template_context = {
