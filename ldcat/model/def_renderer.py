@@ -51,6 +51,7 @@ class DefRenderer(Renderer):
         _template_context = {
             'model': self.model,
             'view': self.views[self.view].label,
+            'title': self.model.title
         }
 
         return Response(

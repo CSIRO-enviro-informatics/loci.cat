@@ -130,10 +130,10 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
             self.label = 'VoID Linksets'
             graph_filename = 'linksets.p'
         elif cic == config.URI_DEF_CLASS:  # TODO: cater for other def types, not just onts
-            self.label = 'Definitional Resource'
+            self.label = 'Definitional Items'
             graph_filename = 'defs.p'
         elif cic == config.URI_TOOL_CLASS:
-            self.label = 'Tools Resource'
+            self.label = 'Tools Items'
             graph_filename = 'tools.p'
         else:
             raise RuntimeError("Cannot get register objects")
@@ -234,6 +234,8 @@ class LociRegisterRenderer(pyldapi.RegisterRenderer):
 
     def render(self):
         try:
+            if self.format == 'text/html':
+                return super(LociRegisterRenderer, self)._render_reg_view_html(template_context={'title': self.label + ' Register'})
             return super(LociRegisterRenderer, self).render()
         except Exception as e:
             from flask import request

@@ -26,7 +26,7 @@ class DatasetRenderer(Renderer):
         except:
             g = harvester.get_graphs()
 
-        self.DCATDataset = DCATModel(uri, g)
+        self.model = DCATModel(uri, g)
 
         super(DatasetRenderer, self).__init__(request, uri, self._get_views(), 'dcat')
 
@@ -44,8 +44,9 @@ class DatasetRenderer(Renderer):
 
     def _render_dcat_html(self):
         _template_context = {
-            'model': self.DCATDataset,
+            'model': self.model,
             'view': self.views[self.view].label,
+            'title': self.model.title
         }
 
         return Response(
