@@ -3,9 +3,9 @@
     {% block content %}
         <h1>Alternates View</h1>
         {% if class_uri %}
-            <h2>Instance <a href="{{ class_uri }}">{{ class_uri }}</a></h2>
+            <h2>Instance <a href="{{ class_uri }}">{{ h.make_title(class_uri) }}</a></h2>
         {% else %}
-            <h2>Instance <a href="{{ uri }}">{{ uri }}</a></h2>
+            <h2>Instance <a href="{{ uri }}">{{ h.make_title(uri) }}</a></h2>
         {% endif %}
 
         {% if uri %}
