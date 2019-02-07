@@ -1,8 +1,9 @@
 from pyldapi import Renderer, View
-from flask import Response, render_template
+from flask import Response, render_template, redirect
 import harvester
-from ldcat import tools
+from ldcat import helper
 from ldcat.queries import DefQueries
+from rdflib import Graph
 
 
 class DefModel():
@@ -23,11 +24,11 @@ class DefModel():
 class DefRenderer(Renderer):
     def __init__(self, uri, request):
         try:
-            g = harvester.load_graph('defs.p')
+            self.g = harvester.load_graph('defs.p')
         except:
-            g = harvester.get_graphs()
+            self.g = harvester.get_graphs()
 
-        self.model = DefModel(uri, g)
+        self.model = DefModel(uri, self.g)
 
         super(DefRenderer, self).__init__(request, uri, self._get_views(), 'loci')
 
@@ -41,13 +42,15 @@ class DefRenderer(Renderer):
                 return self._render_html()
 
     def _render_rdf(self):
-        raise NotImplementedError
+        if self.format == 'text/turtle':
+            return redirect(self.uri + '?_format=text/turtle')
+        g = Graph().parse(source=self.uri + '?_format=text/turtle', format='turtle')
+        return Response(g.serialize(format=Renderer.RDF_SERIALIZER_MAP[self.format]), mimetype=self.format)
 
     def _render_html(self):
         _template_context = {
             'model': self.model,
             'view': self.views[self.view].label,
-            't': tools
         }
 
         return Response(
