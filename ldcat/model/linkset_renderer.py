@@ -1,6 +1,6 @@
 from pyldapi import Renderer, View
 import harvester
-from ldcat import tools
+from ldcat import helper
 from flask import render_template, Response, redirect
 from ldcat.queries import LinksetQueries
 
@@ -48,7 +48,6 @@ class LinksetRenderer(Renderer):
         _template_context = {
             'model': self.model,
             'view': self.views[self.view].label,
-            't': tools
         }
 
         return Response(

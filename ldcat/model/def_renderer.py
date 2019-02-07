@@ -1,7 +1,7 @@
 from pyldapi import Renderer, View
 from flask import Response, render_template, redirect
 import harvester
-from ldcat import tools
+from ldcat import helper
 from ldcat.queries import DefQueries
 from rdflib import Graph
 
@@ -51,7 +51,6 @@ class DefRenderer(Renderer):
         _template_context = {
             'model': self.model,
             'view': self.views[self.view].label,
-            't': tools
         }
 
         return Response(

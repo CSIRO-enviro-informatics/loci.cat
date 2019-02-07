@@ -1,7 +1,7 @@
 from pyldapi import Renderer, View
 import harvester
 from flask import Response, render_template, redirect
-from ldcat import tools
+from ldcat import helper
 from ldcat.queries import DCATQueries
 
 
@@ -46,7 +46,6 @@ class DatasetRenderer(Renderer):
         _template_context = {
             'model': self.DCATDataset,
             'view': self.views[self.view].label,
-            't': tools
         }
 
         return Response(
