@@ -3,7 +3,7 @@ A simple Lined Data catalogue tool that contains both a harvester and a web disp
 
 This web-based catalogue tool harvests the metadata for and lists Datasets, Linksets, definitional items and anything else available as [Linked Data](https://www.w3.org/standards/semanticweb/data) that is "pointed at" (given the identifying URI for). It only contains information extracted from the items via their URIs and doesn't store anything locally except for caching purposes.
 
-## Istances
+## Instances
 This tool is used for the following catalogues:
 
 * The LocI Project - [http://loci.cat](http://loci.cat)
