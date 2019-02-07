@@ -63,7 +63,7 @@ class LinksetRenderer(Renderer):
             'loci': View(
                 'Location Index (Loc-I) Linkset',
                 'This Loc-I view provides basic metadata information on a Loc-I Linkset.',
-                ['text/html', 'application/json'] + self.RDF_MIMETYPES,
+                ['text/html'], # TODO: Add other formats once available
                 'text/html',
                 languages=['en'],  # default 'en' only for now
                 namespace=''
