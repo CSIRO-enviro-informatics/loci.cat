@@ -1,18 +1,30 @@
+from os import path as path
 from flask import Blueprint, render_template, redirect, request
 import locicat.config as config
 import markdown
 from flask import Markup
 from locicat.view.register import LociRegisterRenderer
+from pyldapi import RegisterOfRegistersRenderer
 
 routes = Blueprint('routes', __name__)
 
 
 @routes.route('/')
 def index():
-    return render_template(
-        'index.html',
-        title='loci.cat'
+    rofr_path = path.join(config.APP_DIR, 'view', 'rofr.ttl')
+    print(rofr_path)
+    r = RegisterOfRegistersRenderer(
+        request,
+        'http://loci.cat',
+        'loci.cat Register of Registers',
+        'This is the top-level register for all Linked Data assets within the Loc-I project',
+        rofr_path,
     )
+    return r.render()
+    # return render_template(
+    #     'index.html',
+    #     title='loci.cat'
+    # )
 
 
 @routes.route('/dataset/')

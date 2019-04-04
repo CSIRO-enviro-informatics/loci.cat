@@ -4,8 +4,8 @@ table, th, td {
 }
 
 h1 {
-    color: #D2875E; /*rgb(171, 132, 118);*/
     font-family: 'FontSiteSans Light', Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(0, 135, 178);
     font-size: 3em;
     letter-spacing: -0.045em;
     font-weight: 100;
@@ -13,7 +13,7 @@ h1 {
 
 h2 {
     font-family: 'FontSiteSans Light', Verdana, Arial, Helvetica, sans-serif;
-    color: #666666;
+    color: rgb(0, 135, 178);
     font-size: 2em;
     letter-spacing: -0.045em;
     margin: 30px 0 10px 0;
@@ -23,7 +23,7 @@ h2 {
 
 h3 {
     font-family: 'FontSiteSans Light', Verdana, Arial, Helvetica, sans-serif;
-    color: #666666;
+    color: rgb(0, 135, 178);
     font-size: 1.5em;
     letter-spacing: -0.045em;
     margin: 0;
@@ -34,7 +34,7 @@ h3 {
 
 h4 {
     font-family: 'FontSiteSans Light', Verdana, Arial, Helvetica, sans-serif;
-    color: #666666;
+    color: rgb(157, 157, 157);
     font-size: 1.25em;
     letter-spacing: -0.045em;
     margin: 0;
@@ -48,13 +48,13 @@ p, a, li, td, th {
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 a {
-    color: darkblue;
+    color: rgb(0, 171, 205);
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
-    color: rgb(179, 0, 0);
+    color: rgb(0, 135, 178);
 }
 
 body {
@@ -67,9 +67,16 @@ body {
     text-align: left;
     padding: 20px;
 }
+
 #header {
-    background-color: #FFD5BF; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
-    padding: 20px;
+    background-color: rgb(48, 144, 199);
+    padding: 10px;
+}
+
+#header a {
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
 }
 
 /*
@@ -111,25 +118,24 @@ ul {
 }
 
 #footer {
-    background-color: #FFD5BF; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
+    border-top: solid 10px rgb(48, 144, 199);
     padding: 5px 20px 5px 20px;
     text-align: center;
     font-style: italic;
 }
 
 code {
-    font-size: larger;
+    font-size: 1.5em;
 }
 
 #alternates {
     float: right;
     display: block;
-    background-color: #FFD5BF; /*#D2875E; /*#AA5D33; /*rgb(138, 187, 117);*/
+    background-color: rgb(122, 206, 242);
     padding: 10px;
     width:200px;
     text-align:center;
 }
-
-a {
-    color: #AA5D33;
+#alternates > h4 {
+    color: white;
 }
