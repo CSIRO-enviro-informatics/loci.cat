@@ -49,9 +49,14 @@ def harvest_datasets():
     print('---------------')
     # for each dataset in the config file, pull down its DCAT description
     g = Graph()
+
+    if config.DEF_MIXIN:
+        r = requests.get(config.DEF_MIXIN, headers={'Accept': 'text/turtle'})
+        g.parse(data=r.content.decode('utf-8'), format='turtle')
+
     for d in config.DATASETS:
         print('Harvesting {}'.format(d))
-        r = requests.get(d, headers={'Accept': 'text/turtle'})
+        r = requests.get(d, params={'_view': 'void', '_format': 'text/turtle'})
         g.parse(data=r.content.decode('utf-8'), format='turtle')
         print('From {} got {} triples'.format(d, len(g)))
 
@@ -70,8 +75,52 @@ def harvest_datasets():
 def harvest_linksets():
     print('Harvesting Linksets')
     print('---------------')
-    # TODO: implement harvest_linksets
-    pass
+    g = Graph()
+
+    if config.DEF_MIXIN:
+        r = requests.get(config.DEF_MIXIN, headers={'Accept': 'text/turtle'})
+        g.parse(data=r.content.decode('utf-8'), format='turtle')
+
+    for l in config.LINKSETS:
+        print('Harvesting {}'.format(l))
+        r = requests.get(l, headers={'Accept': 'text/turtle'})
+        g.parse(data=r.content.decode('utf-8'), format='turtle')
+        print('From {} got {} triples'.format(l, len(g)))
+
+    # expand the graph
+    owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(g)
+    print('Expanded to {}'.format(len(g)))
+
+    # pickle the graph for page loads until next refresh
+    pickle.dump(g, open(os.path.join(config.APP_DIR, 'linksets.p'), 'wb'))
+    print('Linksets graph stored')
+    return g
+
+
+def harvest_tools():
+    # TODO:
+    print('Harvesting Tools')
+    print('---------------')
+    g = Graph()
+
+    if config.DEF_MIXIN:
+        r = requests.get(config.DEF_MIXIN, headers={'Accept': 'text/turtle'})
+        g.parse(data=r.content.decode('utf-8'), format='turtle')
+
+    for t in config.TOOLS:
+        print('Harvesting {}'.format(t))
+        r = requests.get(t, headers={'Accept': 'text/turtle'})
+        g.parse(data=r.content.decode('utf-8'), format='turtle')
+        print('From {} got {} triples'.format(t, len(g)))
+
+    # expand the graph
+    owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(g)
+    print('Expanded to {}'.format(len(g)))
+
+    # pickle the graph for page loads until next refresh
+    pickle.dump(g, open(os.path.join(config.APP_DIR, 'linksets.p'), 'wb'))
+    print('Linksets graph stored')
+    return g
 
 
 def harvest():
@@ -90,8 +139,9 @@ def load_graph(graph_file):
 
 
 def get_graphs():
-    g = Graph()
+    # load an owlrl-expanded graph
 
+    g = Graph()
     o = load_graph('defs.p')
     if not o:
         o = harvest_defs()
@@ -102,11 +152,15 @@ def get_graphs():
         d = harvest_datasets()
     g += d
 
-    # TODO: include Linksets in get_graphs
-    # l = load_graph('linksets.p')
-    # if not l:
-    #     l = harvest_linksets()
-    # g += l
+    l = load_graph('linksets.p')
+    if not l:
+        l = harvest_linksets()
+    g += l
+
+    # make new inferences with the combined graph
+    print('Currently all graphs combined have {} triples'.format(len(g)))
+    owlrl.DeductiveClosure(owlrl.OWLRL_Semantics).expand(g)
+    print('Expanded to {}'.format(len(g)))
 
     return g
 
