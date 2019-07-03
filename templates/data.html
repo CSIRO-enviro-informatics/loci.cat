@@ -1,0 +1,16 @@
+{% extends "page.html" %}
+
+{% block content %}
+    <h1>Data</h1>
+    <h2 id="datasets"><a href="#datasets">&#167;</a> Datasets</h2>
+    <ul>
+      <li id="crs"><a href="http://linked.data.gov.au/dataset/gnaf">Geocoded National Address File (G-NAF)</a></li>
+    </ul>
+    <h2 id="linksets"><a href="#linksets">&#167;</a> Linksets</h2>
+    <p>
+        The <a href="{{ url_for('principles') }}#datasetsandlinksets">Linksets</a> implemented by the LocI Test Cache are:
+    </p>
+    <ol>
+        <li><a href="https://github.com/CSIRO-enviro-informatics/agiftcrsth-linkset">Addresses &#8594; Contracted Catchements</a></li>
+    </ol>
+{% endblock %}

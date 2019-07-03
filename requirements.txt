@@ -1,7 +1,1 @@
-requests
-rdflib
-owlrl
-pyshacl
 flask
-pyldapi
-markdown

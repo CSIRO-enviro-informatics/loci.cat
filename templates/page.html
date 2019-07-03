@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>LocI Test Cache</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div id="widther">
+        <div id="header">
+            <div id="title" style="float:left;">
+                <a href="http://locationindex.cat"><img src="{{ url_for('static', filename='images/loci_logo.png') }}" alt="LocI Project Logo" /></a>
+            </div>
+            <div style="float:right;">
+                <a href="{{ url_for('home') }}">Home</a> |
+                <a href="{{ url_for('principles' ) }}">Principles</a> |
+                <a href="{{ url_for('models' ) }}">Models</a> |
+                <a href="{{ url_for('data' ) }}">Data</a> |
+                <a href="{{ url_for('cache' ) }}">Cache</a> |
+                <a href="{{ url_for('sparql' ) }}">Query endpoint</a> |
+                <a href="{{ url_for('examples' ) }}">Examples</a> |
+                <a href="{{ url_for('about' ) }}">About</a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="container-content">
+            {% block content %}{% endblock %}
+        </div>
+        <footer>
+            <p>
+              Location Index is part of the <a href= "https://www.pmc.gov.au/public-data/data-integration-partnership-australia" > Data Integration Partnership for Australia (DIPA)</a> program which utilises the collective resources of <a href ="http://wwww.ga.gov.au">Geoscience Australia</a>, <a href = "https://www.csiro.au/">Commonwealth Scientific and Industrial Research (CSIRO)</a>, <a href = "https://www.abs.gov.au/" > the Australian Bureau of Statistics (ABS)</a>, <a href = "http://www.agriculture.gov.au/" > Department of Agriculture and Water Resources </a> and the <a href = "http://www.environment.gov.au/" >Department of the Environment and Energy. </a> </p>
+ <p> A memorandum of understanding (MOU) was signed by all partners to define specific contributions to the Location Index for both resource and intellectual property contributions. It also defines partners&#700; roles such as business ownership, project management, technical development and advisors.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
