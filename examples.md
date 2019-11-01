@@ -1,0 +1,4 @@
+---
+permalink: /examples.html
+---
+
