@@ -1,61 +1,25 @@
-# LD Cat
-A simple Lined Data catalogue tool that contains both a harvester and a web display framework.
+# locationindex.org test site
 
-This web-based catalogue tool harvests the metadata for and lists Datasets, Linksets, definitional items and anything else available as [Linked Data](https://www.w3.org/standards/semanticweb/data) that is "pointed at" (given the identifying URI for). It only contains information extracted from the items via their URIs and doesn't store anything locally except for caching purposes.
+## Introduction to Loc-I
 
-## Istances
-This tool is used for the following catalogues:
+Location Index (Loc-I) is a framework that provides a consistent way to seamlessly integrate data on people, business, and the environment.
 
-* The LocI Project - [http://loci.cat](http://loci.cat)
-* The Longitudinal Spine of Government Functions - [http://longspine.cat](http://longspine.cat) - *not fully working yet*
+Location Index aims to extend the characteristics of the foundation spatial data of taking geospatial data (multiple geographies) which is essential to support public safety and wellbeing, or critical for a national or government decision making that contributes significantly to economic, social and environmental sustainability and linking it with observational data. Through providing the infrastructure to support cross-domain foundation data linkages and analysis will open up substantial opportunity for providing a richer set of information to develop, analyse and evaluate policy, programs and service delivery by government.
 
-The items that constitute the catalogues in the instances above are different and specified per-installation in a config file. The branding they use for their web pages is maintained in branches of this repository.
+Refer to the locationindex.org site for more info.
 
-## Catalogue Implementation
-### Harvester
-The harvesting component of this catalogue uses a series of very simple [Python programming language](https://www.python.org/) scripts to collect Datasets, Linksets, ontologies and tools metadata from their points of truth. It is able to do this very simple since all of those items present basic [DCAT (revised)](https://www.w3.org/TR/vocab-dcat-2/) metadata at easy-to-find web addresses and using the [RDF Turtle](https://www.w3.org/TR/turtle/) data format. 
+## What you can do here
 
-For example, the [GNAF Dataset](http://linked.data.gov.au/dataset/gnaf) is online at the persistent URI of [http://linked.data.gov.au/def/gnaf](http://linked.data.gov.au/def/gnaf) and its DCAT (rev.) metadata is accessible by adding the Query Strong Arguments *_view* and *_format* to that URI: <a href="http://linked.data.gov.au/def/gnaf?_view=dcat&format=text/turtle">http://linked.data.gov.au/def/gnaf<strong>?_view=dcat&format=text/turtle</strong></a>.
-
-The harvester uses Python's [Requests](http://docs.python-requests.org/en/master/) module to retrieve all item's DCAT (rev.) RDF and then it stores it in a Python [rdflib](https://rdflib.readthedocs.io/en/latest/) data graph. It then applies some rule-based reasoning to that graph using the [OWL-RL](https://owl-rl.readthedocs.io/en/latest/) Web Ontology Language ([OWL](https://www.w3.org/2001/sw/wiki/OWL)) rule engine to create generic generic properties from the items' specialised ones.
-
-The harvester validates each item's RDF data by using the [pySHACL](https://pypi.org/project/pyshacl/), [SHACL](https://www.w3.org/TR/shacl/) to comparing the information it retries to 'shapes' templates of expected information.  
-
-When done, the harvester stores the items' validated information in a single on-disk graph that it can use to service catalogue requests for information (see next section).
-
-### Web catalogue
-This catalogue uses a very simple Python [Flask](http://flask.pocoo.org/) HTTP framework instance to service requests for the information it contains. In general, it receives a request (someone or some tool clicking on a web link at `http://{IMPLEMENTATION_URI}/...`) and translates that into a Python function call that accesses the information the catalogue contains. Since the catalogue stores all of its information within an RDF data graph, it uses either [rdflib loop queries](https://rdflib.readthedocs.io/en/stable/intro_to_graphs.html) or [SPARQL](https://www.w3.org/TR/sparql11-query/) queries facilitated by rdflib.
-
-#### Sitemap
-The full sitemap of the LocI project's implementation of this catalogue is:
-
-* [Home](http://loci.cat) - catalogue home and the *Register of Registers*
-    * [Dataset Register](http://loci.cat/dataset/)
-    * [Linkset Register](http://loci.cat/linkset/)
-    * [Ontology Register](http://loci.cat/def/)
-    * [Tool Register](http://loci.cat/tool/)
-* [About Page](http://loci.cat/about) - *this page*
+* Learn about the motivating design choices of LocI - Principles Page
+* See all the models - Models Page
+  * The overarching and component models used in this project are listed here as are links to their definitional homes
+* Learn about the individual datasets - Data Page
+* Understand the mechanics of this cache of LocI - Cache Page
+* See example queries and other data use scenarios - Examples Page
 
 
-## Dependencies
-See the [requirements.txt](https://github.com/CSIRO-enviro-informatics/ld.cat/blob/master/requirements.txt) standard Python dependency listing file.
+-- 
 
+Location Index is part of the Data Integration Partnership for Australia (DIPA) program which utilises the collective resources of Geoscience Australia, Commonwealth Scientific and Industrial Research (CSIRO), the Australian Bureau of Statistics (ABS), Department of Agriculture and Water Resources and the Department of the Environment and Energy.
 
-## License
-This code is licensed using the GPL v3 licence. See the [LICENSE file](LICENSE) for the deed.
-
-
-## Contacts
-*Author*:  
-**Nicholas Car**  
-*Senior Experimental Scientist*  
-CSIRO Land & Water, Environmental Informatics Group  
-<nicholas.car@csiro.au>  
-
-
-*Co-maintainer*:  
-**Edmond Chuc**  
-*Junior Developer*  
-CSIRO Land & Water, Environmental Informatics Group  
-<edmond.chuc@csiro.au>  
- 
+A memorandum of understanding (MOU) was signed by all partners to define specific contributions to the Location Index for both resource and intellectual property contributions. It also defines partnersʼ roles such as business ownership, project management, technical development and advisors.

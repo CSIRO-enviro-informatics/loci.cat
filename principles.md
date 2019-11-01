@@ -1,0 +1,5 @@
+---
+permalink: /principles.html
+---
+
+# Principles
