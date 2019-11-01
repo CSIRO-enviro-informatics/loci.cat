@@ -10,7 +10,7 @@ Refer to the https://locationindex.org site for more info.
 
 ## What you can do here
 
-* Learn about the motivating design choices of LocI - [Principles Page](principles.md)
+* Learn about the motivating design choices of LocI - [Principles Page](principles.html)
 * Technical architecture [Technical architecture page](technical_architecture.html)
 * See all the models - [Models Page](models.html)
   * The overarching and component models used in this project are listed here as are links to their definitional homes
