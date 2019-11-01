@@ -6,17 +6,17 @@ Location Index (Loc-I) is a framework that provides a consistent way to seamless
 
 Location Index aims to extend the characteristics of the foundation spatial data of taking geospatial data (multiple geographies) which is essential to support public safety and wellbeing, or critical for a national or government decision making that contributes significantly to economic, social and environmental sustainability and linking it with observational data. Through providing the infrastructure to support cross-domain foundation data linkages and analysis will open up substantial opportunity for providing a richer set of information to develop, analyse and evaluate policy, programs and service delivery by government.
 
-Refer to the (locationindex.org)[https://locationindex.org] site for more info.
+Refer to the [locationindex.org](https://locationindex.org) site for more info.
 
 ## What you can do here
 
-* Learn about the motivating design choices of LocI - (Principles Page)[principles.html]
-* Technical architecture (Technical architecture page)[technical_architecture.html]
-* See all the models - (Models Page)[models.html]
+* Learn about the motivating design choices of LocI - [Principles Page](principles.html)
+* Technical architecture [Technical architecture page](technical_architecture.html)
+* See all the models - [Models Page](models.html)
   * The overarching and component models used in this project are listed here as are links to their definitional homes
-* Learn about the individual datasets - (Data Page)[data.html]
-* Understand the mechanics of this cache of LocI - (Cache Page)[cache.html]
-* See example queries and other data use scenarios - (Examples Page)[examples.html]
+* Learn about the individual datasets - [Data Page](data.html)
+* Understand the mechanics of this cache of LocI - [Cache Page](cache.html)
+* See example queries and other data use scenarios - [Examples Page](examples.html)
 
 
 -- 
