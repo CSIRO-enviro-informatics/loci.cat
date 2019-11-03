@@ -8,6 +8,9 @@ Location Index aims to extend the characteristics of the foundation spatial data
 
 Refer to the https://locationindex.org site for more info.
 
+![Location Index](images/lociDiagram.png "Location Index")
+
+
 ## What you can do here
 
 * Learn about the motivating design choices of LocI - [Principles Page](principles.html)
