@@ -19,6 +19,12 @@ Refer to the [https://locationindex.org](https://locationindex.org) site for mor
 * See all the models - [Models Page](models.md)
   * The overarching and component models used in this project are listed here as are links to their definitional homes
 * [Rules for Loc-I datasets](https://github.com/CSIRO-enviro-informatics/loci.cat/wiki/Rules-for-Loc-I-datasets)
+* Learn more:
+  * [Loc-I Reference Integrated Cache](ref-cache.md)
+  * [Loc-I Integration API](integration-api.md)
+  * [Loc-I Explorer](explorer.md)
+  * [Loc-I Excelerator](excelerator.md)
+  * [Loc-I IderDown](iderDown.md)
 
 -- 
 
