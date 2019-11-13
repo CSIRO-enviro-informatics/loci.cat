@@ -1,4 +1,4 @@
-# locationindex.org test site
+# locationindex.org development site
 
 ## Introduction to Loc-I
 
