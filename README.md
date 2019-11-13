@@ -15,11 +15,9 @@ Refer to the https://locationindex.org site for more info.
 
 * Learn about the motivating design choices of LocI - [Principles Page](principles.md)
 * Technical architecture [Technical architecture page](technical_architecture.md)
+  * Understand the mechanics of this cache of LocI
 * See all the models - [Models Page](models.md)
   * The overarching and component models used in this project are listed here as are links to their definitional homes
-* Learn about the individual datasets - [Data Page](data.md)
-* Understand the mechanics of this cache of LocI - [Cache Page](cache.md)
-* See example queries and other data use scenarios - [Examples Page](examples.md)
 
 
 -- 
