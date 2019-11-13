@@ -57,21 +57,9 @@ As discussed above, in order to create a Loc-I dataset from a spatial dataset su
 Loc-I Linksets are a special kind of data asset. The aim of Loc-I Linksets is to provide a set of relationships between spatial datasets in a consistent way with clear provenance and governance. Linksets encode the relationships 
 
  a consistent way to access, analyse and use location data to support reliable and repeatable processes through automation and application of standards. Streamline data access and analysis provides faster and more accurate way to support a range of policy questions.
-Linking data together is a good way to extract inforamtiion from different sources.
+Linking data together is a good way to extract information from different sources.
 
 
-## Hybrid Spatial Knowledge Graph 
-
-The Loc-I project is exploring tools and infrastructure for enabling improved analysis and decision making capability that integrates data across multiple geographies. Loc-I is exploring the use of semantics of the geographies in a consistent manner using ontologies, including their topology, semantic hierarchies and other relationships. These semantics are deployed as Linked Data on the web, so that each geography and its features are able to be identified precisely, unambiguously, with rich descriptions and semantics, via multiple views that are both human- and machine-readable, and available in multiple formats. 
-
-The Loc-I project is providing a reference spatial knowledge graph, called the Loc-I cache, that aggregates and indexes all relevant Linked Data resources. This enables a Hybrid Spatial Knowledge Graph (refer to the figure below) for querying for Loc-I resources through a graph query engine (SPARQL), and REST APIs for full-text search and spatial searches. 
-
-In particular, these provide users the ability to:
-* Understand a location resource, alternate identifiers, and its semantic relationships
-* Lookup spatial identifiers by text label or location (e.g. lat-lon coordinate)
-* Query geometric topological relationships of a given location, e.g. show me all locations in a geography (or multiple geographies) that are contained within a given location. 
-
-![Loc-I Cache Architecture](images/loci-architecture-oct19.png "Loc-I Cache Architecture")
 
 
 ## Background Models
