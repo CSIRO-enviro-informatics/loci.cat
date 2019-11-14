@@ -8,6 +8,8 @@ permalink: /ref-cache.html
 
 Central reference cache that loads a set of reference spatial layers directed by the Loc-I steering committee.
      
+
+
 ## Why
 
 The Loc-I integrated graph cache provides a graph store for applications and users to query spatial linked data features. This provides users with SPARQL APIs that allows for flexible and powerful queries across the graph store (triple store).
@@ -27,6 +29,20 @@ Via a graph store (RDF triple store). The current implementation uses GraphDB.
 ## MVP 
 
 GraphDB store that caches ASGS 2016, Geofabric v2.1.1, G-NAF (as of May 2016).
+### Querying the graph cache API
+
+The MVP applications that are being developed query the API using SPARQL queries. Using path-based SPARQL queries, it is possible to ask multi-hop questions leveraging the unique power of graph-based DBs like:
+
+* What StatisiticalAreaLevel2 boundary is this Address point within?
+* How many addresses are within this StatisticalAreaLevel4?
+* How many Meshblocks are within this catchment?
+* How many addresses are there in the overlapping intersectional area between this Meshblock and this Catchment?
+* How many Meshblocks are within this DrainageDivision
+
+Running queries like that allows client applications to easily perform tasks like:
+* Cross-Dataset topological-relationship based aggregation and disaggregation of values
+* Cross-Dataset Area-based aggregation and disaggregation (reapportionment)
+* Filtering feature lists by Cross-Dataset relationships.
 
 ## Anticipated future functionality
 
