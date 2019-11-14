@@ -30,9 +30,9 @@ Via a graph store (RDF triple store). The current implementation uses GraphDB.
 GraphDB store that caches ASGS 2016, Geofabric v2.1.1, G-NAF (as of May 2016).
 ### Querying the graph cache API
 
-The MVP applications that are being developed query the API using SPARQL queries. Using path-based SPARQL queries, it is possible to ask multi-hop questions leveraging the unique power of graph-based DBs like:
+The MVP applications that are being developed, query APIs (either via Loc-I integration API or directly via SPARQL to the graph triple store) using SPARQL queries. Using path-based SPARQL queries, it is possible to ask multi-hop questions leveraging the unique power of graph-based DBs like:
 
-* What StatisiticalAreaLevel2 boundary is this Address point within?
+* Which StatisiticalAreaLevel2 feature is this Address point within?
 * How many addresses are within this StatisticalAreaLevel4?
 * How many Meshblocks are within this catchment?
 * How many addresses are there in the overlapping intersectional area between this Meshblock and this Catchment?
