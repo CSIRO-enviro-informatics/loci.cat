@@ -13,7 +13,7 @@ A visual explorer that interfaces with the Loc-I reference Integrated Cache APIs
      
 ## Why
 
-The Loc-I integrated graph i.e. the datasets, spatial features within them, and links between them and to observation data stores that they reference, is a complex interconnected information space with billions of nodes and links between them. The Loc-I explorer provides users interfaces to enable to navigating of the graph. 
+The Loc-I integrated graph i.e. the datasets, spatial features within them, and links between them and to observation data stores that they reference, is a complex interconnected information space with billions of nodes and links between them. The Loc-I explorer provides user interfaces to enable to navigating of the graph. 
      
 ## How 
 
