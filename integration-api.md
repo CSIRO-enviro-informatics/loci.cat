@@ -8,7 +8,7 @@ permalink: /integration-api.html
 
 ## What
 
-A REST API to a Loc-I Integrated Cache.
+A REST API to a Loc-I Integrated Cache and other related data sources.
      
 ## Why
 
