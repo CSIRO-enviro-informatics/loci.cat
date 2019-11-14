@@ -8,7 +8,7 @@ permalink: /excelerator.html
 
 ## What 
 
-A data reapportionment tool. This tool will enable users to reapportion data referenced using one Loc-I data set to another Loc-I dataset, e.g. population count by ASGS Meshblocks reapportioned to Geofabric contracted catchments. 
+A data reapportionment tool. This tool will enable users to reapportion data values referenced using one Loc-I data set to another Loc-I dataset, e.g. population count by ASGS Meshblocks reapportioned to Geofabric contracted catchments. 
 
 ## Why 
 
