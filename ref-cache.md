@@ -2,17 +2,16 @@
 permalink: /ref-cache.html
 ---
 
-# Loc-I Reference Integrated Cache
+# Loc-I Reference Cache
 
 ## What
 
-Central reference cache that loads a set of reference spatial layers directed by the Loc-I steering committee.
-     
+Central cache holding a set of spatial layers to serve as a reference for other applications. The layers included are as directed by the Loc-I steering committee.     
 
 
 ## Why
 
-The Loc-I integrated graph cache provides a graph store for applications and users to query spatial linked data features. This provides users with SPARQL APIs that allows for flexible and powerful queries across the graph store (triple store).
+The Loc-I reference cache provides a graph store for applications and users to query spatial linked data features. This provides users with SPARQL APIs that allows for flexible and powerful queries across the graph store (triple store).
      
 ## How 
 

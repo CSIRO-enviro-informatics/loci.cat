@@ -15,7 +15,7 @@ Why: The primary use case for IDerDown is to be able to download spatial feature
 
 ## How
 * Users are able to select an identifier set to be downloaded from a dropdown list. Users can then select a Loc-I dataset and spatial feature to filter the downloaded identifier set. Outputs returned to user in tabular form as a list of identifiers. 
-* MVP: A web accessible user interface that will enable users to select a Loc-I dataset for which identifiers are to be downloaded. The selected download type (e.g Meshblock) will be able to be filtered by a parent feature type (e.g SA2) within that same dataset. The MVP release (version 1) provides functionality to access the current CSIRO release of the LOC-I cache which loads these datasets: ASGS 2016, Geofabric v2.1.1 and GNAF current.
+* MVP: A web accessible user interface that will enable users to select a Loc-I dataset for which identifiers are to be downloaded. The selected download type (e.g Meshblock) will be able to be filtered by a parent feature type (e.g SA2) within that same dataset. The MVP release (version 1) provides functionality to access the current CSIRO release of the [Loc-I reference cache](ref-cache.md) which loads these datasets: ASGS 2016, Geofabric v2.1.1 and GNAF current.
 
 ## Anticipated future functionality 
 

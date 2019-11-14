@@ -9,7 +9,7 @@ Test site:
 
 ## What
 
-A visual explorer that interfaces with the Loc-I reference Integrated Cache APIs. This tool will enable users to visualise and interactively explore (by clicking on links) and searching the graph of interconnected ontologies (concepts), Loc-I datasets, spatial features within them and linksets that describe spatial relationships between them (i.e. by location, text labels, codes). 
+A visual explorer that interfaces with the [Loc-I reference cache](ref-cache.md) APIs. This tool will enable users to visualise and interactively explore (by clicking on links) and searching the graph of interconnected ontologies (concepts), Loc-I datasets, spatial features within them and linksets that describe spatial relationships between them (i.e. by location, text labels, codes). 
      
 ## Why
 
@@ -21,7 +21,7 @@ Via a web application that provides enable users to conduct point and click brow
 
      
 ## MVP 
-A web accessible interactive graph viewing tool that will enable users to search, find by point, and click to explore the Loc-I graph cache at the top level i.e. dataset and linkset level.
+A web accessible interactive graph viewing tool that will enable users to search, find by point, and click to explore the [Loc-I reference cache](ref-cache.md) at the top level i.e. dataset and linkset level.
      
 ## Anticipated future functionality
 
