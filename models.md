@@ -25,4 +25,4 @@ Table M1: Background models used in LongSpine
 |Simple Knowledge Organization System (SKOS)	|An OWL model for expressing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, folksonomies	| Used to structure the vocabularies and thesauri of government functions |
 
 
-All of these models are loaded into the Loc-I cache, i.e. individual Datasets and Linksets, as a series of Named Graphs which means, they can be selected for use, or excluded, within individual queries against the Loc-I cache.
+All of these models are loaded into the [Loc-I reference cache](ref-cache.md), i.e. individual Datasets and Linksets, as a series of Named Graphs which means, they can be selected for use, or excluded, within individual queries against the [Loc-I reference cache](ref-cache.md).

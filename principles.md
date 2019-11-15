@@ -44,7 +44,7 @@ The figure below shows an excerpt of the Linked Data graph view of the ASGS 2016
 
 ![ASGS Data Example](images/asgs-data-ex.png "ASGS Data Example")
 
-Nodes such as these can then be easily connected to other Dataset nodes and scaled up across the world-wide-web (WWW) as a web of data. Users can then traverse these links using standard web protocols. The Loc-I infrastructure also caches these nodes in a central RDF triple store and provides APIs to query these resources via a Hybrid Spatial Knowledge Graph (see the next section for more details).
+Nodes such as these can then be easily connected to other Dataset nodes and scaled up across the world-wide-web (WWW) as a web of data. Users can then traverse these links using standard web protocols. The Loc-I infrastructure also caches these nodes in a central RDF triple store and provides APIs to query these resources via a [Hybrid Spatial Knowledge Graph](technical_architecture.md).
 
 ## Loc-I Datasets
 
