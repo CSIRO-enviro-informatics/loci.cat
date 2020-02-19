@@ -4,9 +4,47 @@ permalink: /principles.html
 
 # Principles
 
-Loc-I is tackling the challenge of stabilising the identity of geographies and their locations. 
-By stabilising the identity of geographies and their locations, people and systems are able to reference locations more precisely and interoperate across geographies in a more seamless way. 
+## Overview 
+
+Loc-I is tackling the challenge of standardising the identity of geographies and their locations. 
+By standardising the identifiers for geographies and their locations, people and systems are able to reference locations with greater precision and interoperate across geographies in a more seamless way. 
 This is achieved using ontologies and Linked Data identifiers for items in the respective datasets.
+
+This is done in 2 steps.
+
+### 1. Publish location information using standardised identifiers
+
+Publishing location information using reliable and consistent (web-)identifiers and describing location information consistently across datasets provides for standard identifiers and their descriptions. In Loc-I this is achieved via HTTP URIs for naming locations, and describing locations using well-known information models and ontologies (where there gaps, Loc-I defines those information models and ontologies - refer to the [Ontologies](#ontologies) section below).
+
+HTTP URIs for naming locations, ie. location identifiers, provides:
+* an unambiguous naming protocol (each location identifier is uniquely named regardless of geography)
+* identifiers that resolve to somewhere on the web 
+* when Loc-I identifiers are resolved, useful descriptions are provided as human readable landing pages, and machine formats)
+
+The figure below illustrates locations from 2 different geographies with their identifiers shown as HTTP URIs. Resolving these identifiers will provide a landing page to the respective resource (e.g. http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel2/801051049)
+
+![Standardise identifiers](images/principles_01_standardise_identifiers.PNG "standardise identifiers")
+
+
+### 2. Create and register links between spatial features
+
+Creating and registering links between spatial features across reporting hierarchies and geographies
+and recording them as a dataset in its own right is called a `linkset` in Loc-I.
+This is an important concept in Loc-I as it provides an artifact of a process used to associate
+geospatial relationships between spatial features across reporting geographies. 
+The artifact is a concrete way for repeating analysis that uses the linkages between reporting
+geographies, which is currently done via traditional GIS tools.
+
+Producing the linkset and registering it provides users with a consistent way to reference these 
+links for the analysis that may be repeated or require reproducibility.
+
+The figure below illustrates how we capture the link in Loc-I - we use the GeoSPARQL property
+`sfWithin` to capture the spatial link between the ASGS2016 SA2 feature (801051049) and the 
+Geofabric River Region feature (9400237). 
+
+![Standardise links](images/principles_02_standardise_linkages.PNG "standardise links")
+
+The next sections provide more details about the mechanics and approaches used in Loc-I.
 
 ## Linked Data and Loc-I Datasets
 
