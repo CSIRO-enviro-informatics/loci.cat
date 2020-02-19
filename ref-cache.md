@@ -45,6 +45,6 @@ Running queries like that allows client applications to easily perform tasks lik
 
 ## Anticipated future functionality
 
-* Added datasets (ASGS 2011, G-NAF 2019, QLD Cadastre)
+* Added datasets (ASGS 2011, G-NAF 2019, QLD Cadastre) - see the [data](/data) page for a list of data current and future.
 
 

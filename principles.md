@@ -44,6 +44,12 @@ Geofabric River Region feature (9400237).
 
 ![Standardise links](images/principles_02_standardise_linkages.PNG "standardise links")
 
+
+As illustrated below, this is the approach we take in Loc-I to capture identifiers and associate links 
+between locations.
+
+![Datasets and linksets](images/principles_03_datasets_and_linksets.PNG "datasets and linksets")
+
 The next sections provide more details about the mechanics and approaches used in Loc-I.
 
 ## Linked Data and Loc-I Datasets

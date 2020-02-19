@@ -21,6 +21,7 @@ Refer to the [https://locationindex.org](https://locationindex.org) site for mor
 * [Rules for Loc-I datasets](https://github.com/CSIRO-enviro-informatics/loci.cat/wiki/Rules-for-Loc-I-datasets)
 * Learn more:
   * [Loc-I Reference Cache](ref-cache.md)
+  * [Loc-I Datasets and Linksets](data.md)
   * [Loc-I Integration API](integration-api.md)
   * [Loc-I Explorer](explorer.md)
   * [Loc-I Excelerator](excelerator.md)
