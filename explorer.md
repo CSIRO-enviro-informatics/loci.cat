@@ -14,6 +14,12 @@ A visual explorer that interfaces with the [Loc-I integration API](integration-a
 ## Why
 
 The Loc-I graph i.e. the datasets, spatial features within them, and links between them and to observation data stores that they reference, is a complex interconnected information space with billions of nodes and links between them. The Loc-I explorer provides user interfaces to enable to navigating of the graph. 
+
+Functionality that Explorer aims to provide:
+* What Loc-I identifiers do I use in my dataset?
+* What locations are indexed in the Loc-I cache?
+* What are the spatial relationships between geographies?
+
      
 ## How 
 
