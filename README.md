@@ -26,6 +26,7 @@ Refer to the [https://locationindex.org](https://locationindex.org) site for mor
   * [Loc-I Explorer](explorer.md)
   * [Loc-I Excelerator](excelerator.md)
   * [Loc-I IderDown](iderDown.md)
+  * [Loc-I Technical Requirements for new data](loci-technical-requirements.md)
   * [Loc-I Test Cases](https://github.com/CSIRO-enviro-informatics/loci-testdata/wiki)
 
 -- 
