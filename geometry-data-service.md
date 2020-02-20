@@ -61,7 +61,7 @@ to suit the needs of the application.
 ## Linking from a description of a feature
 
 Rather than embed a literal to the geometry in the Geosparql Feature instance,
-we can use the GDS to mint a URI for the geometry and bind it via a URI.
+the GDS may be used to provide a description of the geometry via a URI reference. 
 
 Example: ASGS 2016 Meshblock Feature
 ```
