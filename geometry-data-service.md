@@ -41,6 +41,7 @@ Conneg interfaces the GDS implements are shown below:
 |text/html |Web interface |`<!DOCTYPE html><html lang="en">...`|
 |text/plain |Well-Known Text |`POLYGON((113.1016 -38.062 ...))`|
 |application/json | GeoJSON |`{"type":"Polygon","coordinates":...}`|
+|application/geo+json | GeoJSON (coming soon...)|`{"type":"Polygon","coordinates":...}`|
 |text/turtle | RDF Turtle representation using GeoSPARQL | ```_:geom1 a geo:sfPolygon , geo:Geometry ; geo:asWKT "POLYGON((113.1016 -38.062 ...))"^^geo:wktLiteral .```|
 
 GDS also implements some content profiles (refer to [W3C Conneg by Profile](https://w3c.github.io/dxwg/connegp/)):
@@ -74,7 +75,7 @@ It is up to the client/user to resolve the URI ref to the Geometry via standard 
 
 ## Find the respective feature(s) from the geometry
 
-Given a geometry description, we can follow links back to respective geometry.
+Given a geometry description, we can follow links back to respective feature.
 An example of the RDF/Turtle format response for the Geometry URI 
 `http://gds.loci.cat/geometry/asgs16_mb/20663970000`: 
 ```
