@@ -12,7 +12,7 @@ A REST API to a Loc-I Integrated Cache and other related data sources.
      
 ## Why
 
-Provides developers and technical analysts with interfaces to the [Loc-I reference cache](ref-cache.md) to build applications and query a Loc-I cache without having to know SPARQL. This allows rapid development of applications using the REST API.
+Provides developers and technical analysts with interfaces to the [Loc-I reference cache](ref-cache.md) and other sources, to build applications and query a Loc-I cache without having to know SPARQL. This allows rapid development of applications using the REST API.
 
 ## How 
 

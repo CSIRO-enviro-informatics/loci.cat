@@ -15,8 +15,8 @@ In particular, these provide users the ability to:
 * Query geometric topological relationships of a given location, e.g. show me all locations in a geography (or multiple geographies) that are contained within a given location. 
 
 
-![Loc-I Technical Architecture Overview](images/loci-system-tech-overview-nov2019.png "Loc-I Technical Architecture Overview")
+![Loc-I Technical Architecture Overview](images/loci-system-tech-overview-feb2020.png "Loc-I Technical Architecture Overview")
 
 ## Detailed architecture view 
 
-![Loc-I Cache Architecture](images/loci-architecture-oct19.png "Loc-I Cache Architecture")
+![Loc-I Cache Architecture](images/loci-detailed-architecture.png "Loc-I Cache Architecture")
