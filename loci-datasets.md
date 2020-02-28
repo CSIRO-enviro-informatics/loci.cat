@@ -150,4 +150,4 @@ Design of a application-schema is the responsibility of the data provider, in co
 
 In order to ensure that an Application Schema complies with the conformance rules above, it is recommended to use Loc-I core as the basis, and add additional classes and properties as required to support the application. Some of the classes in an application schema will be Features, and these should be axiomatized as sub-classes of `geo:Feature`. Other classes and properties will extend the application schema outside the scope of Loc-I, and there are no specific constraints arising from Loc-I in these cases. 
 
-See [Loc-I application schemas](./loci-ontologies.md) for a basic outline of the ontologies for the initial Loc-I conformant datasets. 
+See [Loc-I application schemas](loci-ontologies.md) for a basic outline of the ontologies for the initial Loc-I conformant datasets. 
