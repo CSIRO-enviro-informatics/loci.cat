@@ -12,7 +12,7 @@ Loc-I is concerned with descriptions of geospatial entities, known as **features
 The goal is to allow the spatial relationships with features from other datasets to be easily accessible - particularly spatial containment and overlap. 
 While these relationships might _in theory_ be computed on-the-fly, for various reasons this is not always practical or desirable. 
 The Loc-I index computes and assembles the relationships in advance, through various procedures which are tuned to the different sources. 
-These relationships then support the various Loc-I services, such as XXX and YYY
+These relationships then support the various Loc-I services, such as [Excelerator](excelerator.md) and [IderDown](iderDown)
 
 Each significant relationship between features is realised as an explicit 'link'. 
 Metadata is associated with each link in order to indicate where it comes from. 
