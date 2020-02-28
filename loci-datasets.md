@@ -1,3 +1,7 @@
+---
+permalink: /loci-datasets.html
+---
+
 # Rules for Loc-I datasets
 This page describes rules for datasets, conformance to which enables datasets to be integrated in the Loc-I index.
 
