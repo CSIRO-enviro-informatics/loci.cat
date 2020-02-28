@@ -15,10 +15,10 @@ In particular, some ontology designers are comfortable borrowing from existing R
 This is partly just a stylistic preference, but it also reflects varying levels of trust for RDF vocabularies not under local control. 
 
 However, a certain level of consistency is required if we want Loc-I to include many datasets from multiple sources. 
-[Rules for Loc-I datasets](./loci-datasets.md) defines a minimal content model for Loc-I conformant data, using elements from standard OWL ontologies and RDF vocabularies to support common query patterns. 
+[Rules for Loc-I datasets](loci-datasets.md) defines a minimal content model for Loc-I conformant data, using elements from standard OWL ontologies and RDF vocabularies to support common query patterns. 
 The ontologies (application schemas) for the initial Loc-I datasets have now been revised to conform to these Loc-I rules. 
 
-The revised ontologies for the Loc-I datasets used in the **linked-data services** extend the [core Loc-I feature ontology](./loci-datasets.md) with additional classes, properties, and controlled vocabularies (usually expressed using SKOS):
+The revised ontologies for the Loc-I datasets used in the **linked-data services** extend the [core Loc-I feature ontology](loci-datasets.md) with additional classes, properties, and controlled vocabularies (usually expressed using SKOS):
 
 ## ASGS Ontology
 
