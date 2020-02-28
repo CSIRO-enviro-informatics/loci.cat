@@ -69,7 +69,7 @@ Loc-I ontologies are modelled using the Web Ontology Language (OWL). This means 
 
 OWL was chosen as the modelling system as there are numerous public OWL models in wide use of relevance to this project's domain (e.g. the Organization Ontology) and OWL models are specialisable, extensible, technically interoperable (with any other OWL models) and data made according to them can be presented online as Linked Data allowing human- and machine-access across institutions.
 
-Refer to the [Models Page](models.md) for more details on the list of ontologies and background models.
+Refer to the [Loc-I application schemas](./loci-ontologies.md) for more details on the list of ontologies and background models.
 
 ## Linksets
 
@@ -92,7 +92,7 @@ Nodes such as these can then be easily connected to other Dataset nodes and scal
 
 ## Loc-I Datasets
 
-As discussed above, in order to create a Loc-I dataset from a spatial dataset such as the ASGS, the semantics and identity of the resources of the spatial dataset is required. 
+As discussed above, in order to create a [Loc-I dataset](./loci-datasets.md) from a spatial dataset such as the ASGS, the semantics and identity of the resources of the spatial dataset is required. 
 
 ## Loc-I Linksets
 
