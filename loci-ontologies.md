@@ -1,3 +1,7 @@
+---
+permalink: /loci-ontologies.html
+---
+
 # Loc-I application schemas
 
 The initial Loc-I datasets come from three very different custodians: 
