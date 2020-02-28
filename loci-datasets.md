@@ -1,5 +1,5 @@
 # Rules for Loc-I datasets
-This page describes rules for Loc-I datasets, conformance to which enables datasets to be integrated in the Loc-I index.
+This page describes rules for datasets, conformance to which enables datasets to be integrated in the Loc-I index.
 
 ## Loc-I principles
 Loc-I focuses on spatial indexing and linking. 
@@ -35,7 +35,7 @@ Useful but optional properties:
 All other feature properties are application specific, thus not normally of direct interest in the context of Loc-I. 
 
 ## Implementation as linked data
-The Loc-I core feature model uses elements from the following standard RDF vocabaularies
+The Loc-I core feature model uses elements from the following standard RDF vocabularies
 
 | prefix | namespace | description |
 | --- | --- | --- |
@@ -48,25 +48,31 @@ The Loc-I core feature model uses elements from the following standard RDF vocab
 | `data:` | http://linked.data.gov.au/def/datatype/ | AGLDWG Datatypes |
 
 The Loc-I core feature model implements the mandatory and option properties as follows: 
-- each geospatial feature is encoded as a `geo:Feature` 
-- the persistent identifier appears as 
+1. each geospatial feature is encoded as a `geo:Feature` 
+2. the persistent identifier appears as 
   - the value of `dcterms:identifier` 
   - the key in a **persistent URI** which must follow the [Loc-I URI convention](./URI-conventions.md)
-- the name is provided as the value of `rdfs:label` 
-- the feature-type or classification is encoded as 
+3. the name is provided as the value of `rdfs:label` 
+4. the feature-type or classification is encoded as 
   - `rdf:type` if the classifier is an `rdfs:Class` or `owl:Class`, which must be a sub-class of `geo:Feature`
   - `dcterms:type` if the classifier is something else, such as a `skos:Concept` 
-- the geometry is provided as the value of `geo:hasGeometry` 
-- the area is recorded as the value of `geox:hasArea` or `geox:hasAreaM2`
-- spatial relations are recorded using `geo:sfWithin`, `geo:sfContains`, `geo:sfOverlaps`
-- membership of a registered dataset is recorded using `loci:isMemberOf`
-
+5. the geometry is provided as the value of `geo:hasGeometry` 
+6. the area is recorded as the value of `geox:hasArea` or `geox:hasAreaM2`
+7. spatial relations are recorded using `geo:sfWithin`, `geo:sfContains`, `geo:sfOverlaps`
+8. membership of a registered dataset is recorded using `loci:isMemberOf`
 
 ![Essential Loc-I feature](./images/Loci-Feature.png)
 
-_Core model for Loc-I features - required elements in **bold**, application-specific properties in grey_
+_Core model for Loc-I features. Required elements in **bold**. Application-specific classes and properties in grey_
 
-Design of a application-schema is the responsibility of the data provider. It is recommended to use the Loc-I core rules as the basis, and add additional classes and properties as required to support the application.  
+RDF datasets may be serialized in many ways. The [Terse RDF Triple Language (Turtle)](https://www.w3.org/TR/turtle/) is a lightweight format that is easily editable and quite readable. [JSON-LD](https://www.w3.org/TR/json-ld11/) is a JSON-based format that might be more usable in many web contexts. 
+
+## Validation
+
+An RDF dataset may be tested for conformance to the Loc-I requirements in many ways. 
+The [Shapes Constraint Language (SHACL)](https://www.w3.org/TR/shacl/) provides a standard, executable method. [SHACL playground](https://shacl.org/playground/) is a convenient tool for basic testing. [pySHACL](https://github.com/RDFLib/pySHACL) is a 
+
+This [Shapes graph designed for for Loc-I](https://github.com/CSIRO-enviro-informatics/loci-ont/blob/shacl-feature-issue8/loci.shapes.ttl) can be used to test data for basic conformance to Loc-I requirements. 
 
 ## Examples showing only core properties
 ```
@@ -132,10 +138,12 @@ Design of a application-schema is the responsibility of the data provider. It is
 .
 
 ```
+## Application schemas
 
+An [Application Schema](https://www.iso.org/standard/59193.html) is a data model designed to support the functional requirements of a particular application. 
+This will involve more specific classes and properties related to the domain of discourse. 
+Design of a application-schema is the responsibility of the data provider, in consultation with their user community. 
 
-See [Simplifying the initial ontologies](Simplifying-the-initial-ontologies) for a discussion on migrating the prototype ontologies to conform to the general rules. 
+In order to ensure that an Application Schema complies with the conformance rules above, it is recommended to use Loc-I core as the basis, and add additional classes and properties as required to support the application. Some of the classes in an application schema will be Features, and these should be axiomatized as sub-classes of `geo:Feature`. Other classes and properties will extend the application schema outside the scope of Loc-I, and there are no specific constraints arising from Loc-I in these cases. 
 
-## Topology rules and standardisation
-
-TBC
+See [Loc-I application schemas](./loci-ontologies.md) for a basic outline of the ontologies for the initial Loc-I conformant datasets. 

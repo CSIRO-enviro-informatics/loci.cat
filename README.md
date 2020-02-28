@@ -16,9 +16,10 @@ Refer to the [https://locationindex.org](https://locationindex.org) site for mor
 * Learn about the motivating design choices of LocI - [Principles Page](principles.md)
 * Technical architecture [Technical architecture page](technical_architecture.md)
   * Understand the mechanics of this cache of LocI
-* See all the models - [Models Page](models.md)
-  * The overarching and component models used in this project are listed here as are links to their definitional homes
-* [Rules for Loc-I datasets](https://github.com/CSIRO-enviro-informatics/loci.cat/wiki/Rules-for-Loc-I-datasets)
+* [Rules for Loc-I datasets](./loci-datasets.md)
+* Loc-I models - 
+  * [Loc-I Application Schemas (ontologies)](./loci-ontologies)
+  * [Background ontologies](./models.md)
 * Learn more:
   * [Loc-I Reference Cache](ref-cache.md)
   * [Loc-I Datasets and Linksets](data.md)
