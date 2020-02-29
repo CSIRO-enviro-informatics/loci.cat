@@ -7,7 +7,7 @@ permalink: /models.html
 
 ## Background Models
 
-There are a series of well-known OWL models that are used for concepts relevant to LongSpine. These include both the technical, structural, models of how to represent data elements generally and also the conceptual models of particular domains' concepts. The following models are used by Loc-I:
+There are a series of well-known OWL models that are used for concepts relevant to Loc-I. These include both the technical, structural, models of how to represent data elements generally and also the conceptual models of particular domains' concepts. The following models are used by Loc-I:
 
 Table M1: Background models used in LongSpine
 
