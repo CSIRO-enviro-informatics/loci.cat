@@ -43,7 +43,8 @@ Furthermore, since some individuals are members of more than one class, a single
 The recently released [OGC API for Features](http://www.opengis.net/doc/IS/ogcapi-features-1/1.0) has similar URI patterns, but with different keywords and a slightly deeper structure - see summary at [OGC-API-patterns](https://github.com/CSIRO-enviro-informatics/loci.cat/wiki/OGC-API-patterns)
 
 ## Loc-I dataset patterns
-### Feature-types
+### Classes and Feature-types
+
 Ontology | {scope} | separator | {defID}
 --- | --- | --- | --- 
 [ASGS](http://linked.data.gov.au/def/asgs) |  `asgs` | `#` | `MeshBlock`</br>`StatisticalAreaLevel1` </br>`StatisticalAreaLevel2` </br>`StatisticalAreaLevel3` </br>`StatisticalAreaLevel4` </br>`StateOrTerritory` </br>`Country`
