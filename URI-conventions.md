@@ -3,7 +3,7 @@ permalink: /URI-conventions.html
 ---
 
 # Loc-I URI conventions
-Web identifiers (URIs) for Loc-I resources must conform to [AGLDWG URI Conventions](#summary-of-agldwg-guidelines). 
+Web identifiers (URIs) for Loc-I resources must conform to [AGLDWG URI Conventions](#summary-of-agldwg-uri-guidelines). 
 
 Definitions
 ```
