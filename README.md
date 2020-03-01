@@ -21,6 +21,7 @@ Refer to the [https://locationindex.org](https://locationindex.org) site for mor
   * [LOC-I URIs](URI-conventions.md)
 * Loc-I models - 
   * [Loc-I Application Schemas (ontologies)](loci-ontologies.md)
+  * [Links and linksets](link-statements.md)
   * [Background ontologies](models.md)
 * Learn more:
   * [Loc-I Reference Cache](ref-cache.md)
