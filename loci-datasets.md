@@ -55,7 +55,7 @@ The Loc-I core feature model implements the mandatory and option properties as f
 1. each geospatial feature is encoded as a `geo:Feature` 
 2. the persistent identifier appears as 
   - the value of `dcterms:identifier` 
-  - the key in a **persistent URI** which must follow the [Loc-I URI convention](./URI-conventions.md)
+  - the key in a **persistent URI** which must follow the [Loc-I URI convention](URI-conventions.md)
 3. the name is provided as the value of `rdfs:label` 
 4. the feature-type or classification is encoded as 
   - `rdf:type` if the classifier is an `rdfs:Class` or `owl:Class`, which must be a sub-class of `geo:Feature`

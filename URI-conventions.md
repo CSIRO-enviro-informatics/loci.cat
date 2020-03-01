@@ -1,7 +1,11 @@
-# Loc I URI conventions
-## Conformance to AGLDWG guidelines
+---
+permalink: /URI-conventions.html
+---
 
-Loc-I names in the linked.data.gov.au domain must follow the [AGLDWG URI Guideline](https://github.com/AGLDWG/guidelines/blob/master/PID-URI-Guidelines-v2.0.md).
+# Loc-I URI conventions
+## Summary of AGLDWG guidelines
+
+Names in the linked.data.gov.au domain must follow the [AGLDWG URI Guideline](https://github.com/AGLDWG/guidelines/blob/master/PID-URI-Guidelines-v2.0.md).
 
 ### Definitions
 
@@ -39,19 +43,23 @@ Furthermore, since some individuals are members of more than one class, a single
 The recently released [OGC API for Features](http://www.opengis.net/doc/IS/ogcapi-features-1/1.0) has similar URI patterns, but with different keywords and a slightly deeper structure - see summary at [OGC-API-patterns](https://github.com/CSIRO-enviro-informatics/loci.cat/wiki/OGC-API-patterns)
 
 ## Loc-I dataset patterns
-### Ontologies
-path element | [ASGS](http://linked.data.gov.au/def/asgs) | [G-NAF](http://linked.data.gov.au/def/gnaf) | [GeoFabric](http://linked.data.gov.au/def/geofabric) | [Loc-I](http://linked.data.gov.au/def/loci) 
---- | --- | --- | --- | ---
-`{scope}` | `asgs` | `gnaf` | `geofabric` | `loci`
-separator | `#` | `#` | `#` | `#`
-`{defID}` | **Loc-I classes:**<br/> `MeshBlock` `StatisticalAreaLevel1` `StatisticalAreaLevel2` `StatisticalAreaLevel3` `StatisticalAreaLevel4` `StateOrTerritory` `Country` | **Loc-I classes:**<br/> `Address` `StreetLocality` `Locality` | **Loc-I classes:**<br/> `ContractedCatchment` `DrainageDivision` `RiverRegion` | `DataPublisher` `Dataset` `DatasetLinkingStatement` `Feature` `Linkset`
+### Feature-types
+Ontology | {scope} | separator | {defID}
+--- | --- | --- | --- 
+[ASGS](http://linked.data.gov.au/def/asgs) |  `asgs` | `#` | `MeshBlock`</br>`StatisticalAreaLevel1` </br>`StatisticalAreaLevel2` </br>`StatisticalAreaLevel3` </br>`StatisticalAreaLevel4` </br>`StateOrTerritory` </br>`Country`
+[G-NAF](http://linked.data.gov.au/def/gnaf) |  `gnaf` | `#` | `Address` </br>`StreetLocality` </br>`Locality`
+[GeoFabric](http://linked.data.gov.au/def/geofabric) |  `geofabric` | `#` | `ContractedCatchment` </br>`DrainageDivision` </br>`RiverRegion`
+[Loc-I](http://linked.data.gov.au/def/loci) | `loci` | `#` | `DataPublisher` </br>`Dataset` </br>`DatasetLinkingStatement` </br>`Feature` </br>`Linkset`
 
 ### Data
-path element | ASGS | G-NAF | GeoFabric 
+Examples of URI patterns for specific datasets: 
+
+Dataset | {datasetID} | {collectionID} | separator | 
 --- | --- | --- | --- 
-`{datasetID}` | `asgs2016` | `gnaf` | `geofabric` 
-`{collectionID}` | **lowercase**<br/> `meshblock` `statisticalarealevel1` `statisticalarealevel2` `statisticalarealevel3` `statisticalarealevel4` `stateorterritory` `australia` | **lowerCamelCase**<br/> `address` `streetLocality` `locality` | **lowercase**<br/> `contractedcatchment` `drainagedivision` `riverregion`
-separator | `/` | `/` | `/`
+ASGS | `asgs2016` | `meshblock` </br>`statisticalarealevel1` </br>`statisticalarealevel2` </br>`statisticalarealevel3` </br>`statisticalarealevel4` </br>`stateorterritory` </br>`australia` | `/`
+G-NAF | `gnaf` | `address` </br>`streetLocality` </br>`locality` | `/`
+GeoFabric | `geofabric` | `contractedcatchment` </br>`drainagedivision` </br>`riverregion` | `/`
+Meshblock-ControlledCatchment links | `mb16cc` | `statement` | `/`
 
 ### ASGS Summary and examples
 
@@ -64,8 +72,9 @@ http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel3/80106 | http://
 http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel4/207 | http://linked.data.gov.au/def/asgs#StatisticalAreaLevel4 | http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel4 
 http://linked.data.gov.au/dataset/asgs2016/stateorterritory/2 | http://linked.data.gov.au/def/asgs#StateOrTerritory | http://linked.data.gov.au/dataset/asgs2016/stateorterritory 
 http://linked.data.gov.au/dataset/asgs2016/australia/036 | http://linked.data.gov.au/def/asgs#Country | http://linked.data.gov.au/dataset/asgs2016/australia  
+http://linked.data.gov.au/dataset/mb16cc/statement/to98614 | http://linked.data.gov.au/def/loci#LinkingStatement | http://linked.data.gov.au/dataset/mb16cc
 
-Note: in the last line, for the SAL6 'Australia' the _individual_ and _collection_ URIs use /australia/ rather than the _class name_ i.e. /country/ . This follows a [pattern](https://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/c453c497aadde71cca2576d300026a38/Body/0.D64!OpenElement&FieldElemFormat=jpg) inherited from the [ASGS reference](https://www.abs.gov.au/websitedbs/D3310114.nsf/home/Australian+Statistical+Geography+Standard+(ASGS)). 
+Note: in the 2nd-last line, for the SAL6 'Australia' the _individual_ and _collection_ URIs use /australia/ rather than the _class name_ i.e. /country/ . This follows a [pattern](https://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/c453c497aadde71cca2576d300026a38/Body/0.D64!OpenElement&FieldElemFormat=jpg) inherited from the [ASGS reference](https://www.abs.gov.au/websitedbs/D3310114.nsf/home/Australian+Statistical+Geography+Standard+(ASGS)). 
 
 ### G-NAF Summary and examples
 
@@ -83,28 +92,3 @@ http://linked.data.gov.au/dataset/geofabric/contractedcatchment/9550009 | http:/
 http://linked.data.gov.au/dataset/geofabric/drainagedivision/9400214 | http://linked.data.gov.au/def/geofabric#DrainageDivision | http://linked.data.gov.au/dataset/geofabric/drainagedivision 
 http://linked.data.gov.au/dataset/geofabric/riverregion/9400228 | http://linked.data.gov.au/def/geofabric#RiverRegion | http://linked.data.gov.au/dataset/geofabric/riverregion |
 
-## Linksets
-
-What's required for Linksets.
-
-### Definitions
-
-Classes and properties for Loc-I linksets are defined in the [Loc-I Ontology](http://www.linked.data.gov.au/def/loci). 
-The base uri for this ontology is `http://www.linked.data.gov.au/def/loci#`. The token for `{scope}` is `loci`. 
-
-The separator to the `{defID}` is `#`. 
-
-The value for `{defID}` is the class- or property-name. 
-
-### Data 
-
-A `loci:Linkset` is composed of a set of `loci:DatasetLinkingStatement` individuals. 
-Each `loci:DatasetLinkingStatement` describes a relationship between a two features from different datasets. 
-All of the statements relating a particular pair of datasets are members of single linkset. 
-The membership predicate is `dct:isPartOf`. 
-
-TBC
-
-### Linkset summary and example
-
-TBC

@@ -3,19 +3,18 @@ permalink: /link-statements.html
 ---
 
 # Linksets and linking statements
+## Motivation
+Linksets can be assembled for various reasons, including, but not limited to:
+
+* a set of links between members of a single dataset
+* a set of links between members of two specified datasets
+
 ## Definitions
 
-Classes and properties for Loc-I linksets are defined in the [Loc-I Ontology](http://www.linked.data.gov.au/def/loci). 
-
-## Data 
+Classes and properties for Loc-I linking statements and linksets are defined formally as part of the [Loc-I Ontology](http://www.linked.data.gov.au/def/loci). 
 
 A `loci:Linkset` is composed of a set of `loci:LinkingStatement` individuals. 
 The membership predicate is `loci:isMemberOf`. 
-
-Linksets can be assembled for various reasons, including, but not limited to:
-
-* a full set of links between members of a single dataset
-* a full set of links between members of two specified datasets
 
 Each `loci:LinkingStatement` describes a relationship between a two `features` - i.e. geospatial entities. 
 There are many potential linking predicates, but for the purposes of Loc-I the most important are the spatio-topological relationships:

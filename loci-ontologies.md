@@ -21,32 +21,25 @@ The ontologies (application schemas) for the initial Loc-I datasets have now bee
 The revised ontologies for the Loc-I datasets used in the **linked-data services** extend the [core Loc-I feature ontology](loci-datasets.md) with additional classes, properties, and controlled vocabularies (usually expressed using SKOS):
 
 ## ASGS Ontology
-
 [Ontology files and full documentation](https://github.com/AGLDWG/asgs-ont)
 
+### Preview
 ![ASGS Meshblock](./images/ASGS-Meshblock.png)
 
-_Figure 1 - ASGS Meshblock (partial model)_
-
 ## G-NAF Ontology
-
 [Ontology files and full documentation](https://github.com/AGLDWG/gnaf-ont) 
 
+### Preview
 ![GNAF Address](./images/GNAF-Address.png)
 
-_Figure 2 - GNAF (partial model)_
-
 ## Geofabric Ontology
-
 [Ontology files and full documentation](http://linked.data.gov.au/def/geofabric)
 
+### Preview
 ![Geofabric ContractedCatchment](./images/GeofabCC.png)
-
-_Figure 3 - Geofabric (partial model)_
 
 
 ## Conversion of data 
-
 Conversion of the original data from the cache to the preferred pattern is illustrated by the examples below: 
 * [original form](https://raw.githubusercontent.com/CSIRO-enviro-informatics/loci-testdata/simplify-1/loci-ld-dataset/loci-instances-0.ttl)
 * [simplified/harmonized form](https://raw.githubusercontent.com/CSIRO-enviro-informatics/loci-testdata/simplify-1/loci-ld-dataset/loci-instances-1.ttl)
