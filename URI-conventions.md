@@ -24,19 +24,19 @@ http://linked.data.gov.au/dataset/{datasetID}[/{collectionID}](/#){individualID}
 
 Ontology | {scope} | separator | {defID}
 --- | --- | --- | --- 
-[ASGS](http://linked.data.gov.au/def/asgs) |  `asgs` | `#` | `MeshBlock`</br>`StatisticalAreaLevel1` </br>`StatisticalAreaLevel2` </br>`StatisticalAreaLevel3` </br>`StatisticalAreaLevel4` </br>`StateOrTerritory` </br>`Country`
-[G-NAF](http://linked.data.gov.au/def/gnaf) |  `gnaf` | `#` | `Address` </br>`StreetLocality` </br>`Locality`
-[GeoFabric](http://linked.data.gov.au/def/geofabric) |  `geofabric` | `#` | `ContractedCatchment` </br>`DrainageDivision` </br>`RiverRegion`
-[Loc-I](http://linked.data.gov.au/def/loci) | `loci` | `#` | `DataPublisher` </br>`Dataset` </br>`DatasetLinkingStatement` </br>`Feature` </br>`Linkset`
+[ASGS](http://linked.data.gov.au/def/asgs) |  `asgs` | `#` | `MeshBlock`<br/>`StatisticalAreaLevel1` <br/>`StatisticalAreaLevel2` <br/>`StatisticalAreaLevel3` <br/>`StatisticalAreaLevel4` <br/>`StateOrTerritory` <br/>`Country`
+[G-NAF](http://linked.data.gov.au/def/gnaf) |  `gnaf` | `#` | `Address` <br/>`StreetLocality` <br/>`Locality`
+[GeoFabric](http://linked.data.gov.au/def/geofabric) |  `geofabric` | `#` | `ContractedCatchment` <br/>`DrainageDivision` <br/>`RiverRegion`
+[Loc-I](http://linked.data.gov.au/def/loci) | `loci` | `#` | `DataPublisher` <br/>`Dataset` <br/>`DatasetLinkingStatement` <br/>`Feature` <br/>`Linkset`
 
 ## Data
 Examples of URI patterns for specific datasets: 
 
 Dataset | {datasetID} | {collectionID} | separator | 
 --- | --- | --- | --- 
-ASGS | `asgs2016` | `meshblock` </br>`statisticalarealevel1` </br>`statisticalarealevel2` </br>`statisticalarealevel3` </br>`statisticalarealevel4` </br>`stateorterritory` </br>`australia` | `/`
-G-NAF | `gnaf` | `address` </br>`streetLocality` </br>`locality` | `/`
-GeoFabric | `geofabric` | `contractedcatchment` </br>`drainagedivision` </br>`riverregion` | `/`
+ASGS | `asgs2016` | `meshblock` <br/>`statisticalarealevel1` <br/>`statisticalarealevel2` <br/>`statisticalarealevel3` <br/>`statisticalarealevel4` <br/>`stateorterritory` <br/>`australia` | `/`
+G-NAF | `gnaf` | `address` <br/>`streetLocality` <br/>`locality` | `/`
+GeoFabric | `geofabric` | `contractedcatchment` <br/>`drainagedivision` <br/>`riverregion` | `/`
 Meshblock-ControlledCatchment links | `mb16cc` | `statement` | `/`
 
 ## Examples
