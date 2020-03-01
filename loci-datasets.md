@@ -76,7 +76,7 @@ RDF datasets may be serialized in many ways. The [Terse RDF Triple Language (Tur
 An RDF dataset may be tested for conformance to the Loc-I requirements in many ways. 
 The [Shapes Constraint Language (SHACL)](https://www.w3.org/TR/shacl/) provides a standard, executable method. [SHACL playground](https://shacl.org/playground/) is a convenient tool for basic testing. [pySHACL](https://github.com/RDFLib/pySHACL) is a 
 
-This [Shapes graph designed for for Loc-I](https://github.com/CSIRO-enviro-informatics/loci-ont/blob/shacl-feature-issue8/loci.shapes.ttl) can be used to test data for basic conformance to Loc-I requirements. 
+The constraints on `geo:Feature` required for Loc-I compatibility are defined in a `NodeShape` for `loci:Feature` in the [Shapes graph designed for for Loc-I](https://github.com/CSIRO-enviro-informatics/loci-ont/blob/shacl-feature-issue8/loci.shapes.ttl). This can be used to test data for basic conformance to Loc-I requirements. 
 
 ## Examples showing only core properties
 ```
@@ -142,6 +142,10 @@ This [Shapes graph designed for for Loc-I](https://github.com/CSIRO-enviro-infor
 .
 
 ```
+## Links
+
+As mentioned above, links between features are realised and stored explicitly. See this explanation of the [schema for link statements](link-statements.md).
+
 ## Application schemas
 
 An [Application Schema](https://www.iso.org/standard/59193.html) is a data model designed to support the functional requirements of a particular application. 
