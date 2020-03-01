@@ -1,12 +1,11 @@
+---
+permalink: /link-statements.html
+---
+
 # Linksets and linking statements
 ## Definitions
 
 Classes and properties for Loc-I linksets are defined in the [Loc-I Ontology](http://www.linked.data.gov.au/def/loci). 
-The base uri for this ontology is `http://www.linked.data.gov.au/def/loci#`. The token for `{scope}` is `loci`. 
-
-The separator to the `{defID}` is `#`. 
-
-The value for `{defID}` is the class- or property-name. 
 
 ## Data 
 
@@ -25,33 +24,71 @@ There are many potential linking predicates, but for the purposes of Loc-I the m
 * `geo:sfOverlaps`
 * `geo:sfEquals`
 
-The relationship is instantiated as a reified statement, which allows additional information to be associated with the link. This can include provenance information, or might measure the amount of overlap (using `geox:hasArea` as a property of the linking statement). 
+The link is instantiated as an `rdf:Statement` which 'reifies' the relationship, so that additional information can be associated with the link. 
+This should include provenance information, and may include a measurement of the amount of overlap (using `geox:hasArea` as a property of the linking statement). 
 
 ## Example
+The direct relationship 
+```
+<http://linked.data.gov.au/dataset/asgs2016/meshblock/20663930000> geo:sfOverlaps <http://linked.data.gov.au/dataset/geofabric/contractedcatchment/12101547> .
+```
+is reified as 
 ```
 <http://linked.data.gov.au/dataset/mb16cc/statement/to98614>
   rdf:type loci:LinkingStatement ;
   rdf:type rdf:Statement ;
-  geox:hasAreaM2 567000.0 ;
-  loci:hadGenerationMethod "by hand" ;
-  loci:isMemberOf <http://linked.data.gov.au/dataset/mb16cc> ;
-  dcterms:created "2019-12-20"^^xsd:date ;
-  dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
-  rdf:object <http://linked.data.gov.au/dataset/geofabric/contractedcatchment/12101547> ;
-  rdf:predicate geo:sfOverlaps ;
+#
+# the features involved in the link
+#
   rdf:subject <http://linked.data.gov.au/dataset/asgs2016/meshblock/20663930000> ;
+  rdf:predicate geo:sfOverlaps ;
+  rdf:object <http://linked.data.gov.au/dataset/geofabric/contractedcatchment/12101547> ;
+#
+# the amount of overlap
+#
+  geox:hasAreaM2 567000.0 ;
+#
+# the provenance of the link
+#
+  dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:created "2019-12-20"^^xsd:date ;
+  loci:hadGenerationMethod <linked.data.gov.au/def/plan/manual> ;
+#
+# part of a registered Linkset
+#
+  loci:isMemberOf <http://linked.data.gov.au/dataset/mb16cc> ;
+.
+```
+where 
+
+```
+<linked.data.gov.au/def/plan/manual>
+  rdf:type prov:Plan ;
+  dcterms:description "individual assignment through manual inspection" ; 
 .
 
 <http://linked.data.gov.au/dataset/mb16cc>
   rdf:type loci:Linkset ;
-  loci:hadGenerationMethod "by hand" ;
   dcterms:created "2019-12-20"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
 .
-
 ```
 
-## SPARQL used in remediating [sample linkset](https://github.com/CSIRO-enviro-informatics/loci-testdata/blob/master/loci-ld-dataset/loci-linkset-instances-1.ttl) 
+## Converting linking statements to links
+To extract direct links from a set of reified linking-statements, a simple SPARQL CONSTRUCT query can be used:
+```
+CONSTRUCT {?s ?p ?o . }
+WHERE {
+	?t a rdf:Statement ;
+		rdf:subject ?s ;
+		rdf:predicate ?p ;
+		rdf:object ?o .
+}
+```
+
+## Building the initial linkset
+
+The [sample linkset](https://github.com/CSIRO-enviro-informatics/loci-testdata/blob/master/loci-ld-dataset/loci-linkset-instances-1.ttl) was remediated using the following SPARQL
 
 ```
 INSERT { ?l a loci:LinkingStatement , rdf:Statement . }
