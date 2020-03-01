@@ -11,7 +11,7 @@ Linksets can be assembled for various reasons, including, but not limited to:
 
 ## Definitions
 
-Classes and properties for Loc-I linking statements and linksets are defined formally as part of the [Loc-I Ontology](http://www.linked.data.gov.au/def/loci). 
+Classes and properties for Loc-I linking statements and linksets are defined formally as part of the [Loc-I Ontology](http://linked.data.gov.au/def/loci). 
 
 A `loci:Linkset` is composed of a set of `loci:LinkingStatement` individuals. 
 The membership predicate is `loci:isMemberOf`. 
