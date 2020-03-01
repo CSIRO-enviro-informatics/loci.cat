@@ -1,3 +1,7 @@
+---
+permalink: /OGC-API.html
+---
+# OGC API identifiers
 The recently released [OGC API - Features - Part 1: Core](http://www.opengis.net/doc/IS/ogcapi-features-1/1.0) specifies a set of URI patterns for accessing features.
 
 ## Terminology
