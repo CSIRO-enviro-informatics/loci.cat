@@ -18,9 +18,9 @@ Refer to the [https://locationindex.org](https://locationindex.org) site for mor
   * Understand the mechanics of this cache of LocI
 * Loc-I conventions
   * [Rules for Loc-I datasets](loci-datasets.md)
-  * [LOC-I URIs](URI-conventions.md)
+  * [Loc-I URIs](URI-conventions.md)
 * Loc-I models - 
-  * [Loc-I Application Schemas (ontologies)](loci-ontologies.md)
+  * [Application Schemas (ontologies)](loci-ontologies.md)
   * [Links and linksets](link-statements.md)
   * [Background ontologies](models.md)
 * Learn more:

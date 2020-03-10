@@ -78,6 +78,12 @@ The [Shapes Constraint Language (SHACL)](https://www.w3.org/TR/shacl/) provides 
 
 The constraints on `geo:Feature` required for Loc-I compatibility are defined in a `NodeShape` for `loci:Feature` in the [Shapes graph designed for for Loc-I](https://github.com/CSIRO-enviro-informatics/loci-ont/blob/shacl-feature-issue8/loci.shapes.ttl). This can be used to test data for basic conformance to Loc-I requirements. 
 
+## Queries
+
+The significant benefit of having a common core is that the queries required for standard Loc-I functionality are also common across datasets - i.e. the SPARQL queries will have no dependence on RDF predicates from application-specific vocabularies, only from `rdf:`, `dcterms:`, `rdfs:`, `geo:`, `geox:` and `loci:`. 
+
+(detailed examples TBC)
+
 ## Examples showing only core properties
 ```
 <http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel2/205031088>

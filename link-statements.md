@@ -61,17 +61,19 @@ is reified as
 where 
 
 ```
-<linked.data.gov.au/def/plan/manual>
-  rdf:type prov:Plan ;
-  dcterms:description "individual assignment through manual inspection" ; 
-.
-
 <http://linked.data.gov.au/dataset/mb16cc>
   rdf:type loci:Linkset ;
   dcterms:created "2019-12-20"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
 .
+
+<linked.data.gov.au/def/plan/manual>
+  rdf:type prov:Plan ;
+  dcterms:description "individual assignment through manual inspection" ; 
+.
 ```
+The latter item is an entry from a _set_ of standard link-generation methods. 
+This is currently notional, but shoudl be regularized as part of ongoing Loc-I work. 
 
 ## Converting linking statements to links
 To extract direct links from a set of reified linking-statements, a simple SPARQL CONSTRUCT query can be used:
