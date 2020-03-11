@@ -35,7 +35,7 @@ Refer to the [https://locationindex.org](https://locationindex.org) site for mor
 * Access Loc-I applications directly
   * [IderDown](http://loci.cat/iderDown) - find identifiers from a different geography
   * [Excelerator](https://excelerator.loci.cat/) - re-assign data to a different geography
-  * [GDS](geometry-data-service/api.html)
+  * [GDS](geometry-data-service/api.html) - Geometry Data Service
   * [Integration API](https://api2.loci.cat/api/v1/doc)
 
 -- 
