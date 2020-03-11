@@ -23,15 +23,19 @@ Refer to the [https://locationindex.org](https://locationindex.org) site for mor
   * [Application Schemas (ontologies)](loci-ontologies.md)
   * [Links and linksets](link-statements.md)
   * [Background ontologies](models.md)
-* Learn more:
+* Datasets and applications:
   * [Loc-I Reference Cache](ref-cache.md)
   * [Loc-I Datasets and Linksets](data.md)
+  * [Loc-I Geometry Data Service](geometry-data-service.md)
   * [Loc-I Integration API](integration-api.md)
   * [Loc-I Explorer](explorer.md)
   * [Loc-I Excelerator](excelerator.md)
   * [Loc-I IderDown](iderDown.md)
-  * [Loc-I Technical Requirements for new data](loci-technical-requirements.md)
   * [Loc-I Test Cases](https://github.com/CSIRO-enviro-informatics/loci-testdata/wiki)
+* Access Loc-I applications directly
+  * [IderDown](http://loci.cat/iderDown) - find identifiers from a different geography
+  * [Excelerator](https://excelerator.loci.cat/) - re-assign data to a different geography
+  * [GDS](geometry-data-service/api.html)
 
 -- 
 
