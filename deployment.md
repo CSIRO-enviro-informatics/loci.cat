@@ -2,6 +2,10 @@
 permalink: /deployment.html
 ---
 
+## System Overview for Deployment
+![Loc-I System Deployment overview](images/loci-system-overview-deployment.png "System Overview")
+
+
 
 ## Application and Backend Docker Images Required
 
