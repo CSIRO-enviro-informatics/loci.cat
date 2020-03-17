@@ -7,22 +7,7 @@ permalink: /deployment.html
 
 ### Backend 
 
- * loci-integration-api
-   * Github repo: https://github.com/CSIRO-enviro-informatics/loci-integration-api 
-   * List of images:
-     * main API based on `sanicframework/sanic:LTS`. [Dockerfile](https://github.com/CSIRO-enviro-informatics/loci-integration-api/blob/master/Dockerfile)
-     * elasticsearch image: `docker.elastic.co/elasticsearch/elasticsearch:6.3.1` 
- * loci-cache
-   *  Github repo: https://github.com/CSIRO-enviro-informatics/loci-cache-scripts/ 
-   *  List of images:
-      *  Cache build docker image (based on `ubuntu:18.04`). See [Dockerfile](https://github.com/CSIRO-enviro-informatics/loci-cache-scripts/blob/jyucsiro/feature/gnaf_gf_harvest/docker/cache/Dockerfile)
- * loci-geometry-data-service 
-   * Github repo: https://github.com/CSIRO-enviro-informatics/loci-geometry-data-service
-   * List of images:
-     * Image name: `csiroenvinf/geometry-data-service`
-       * See https://hub.docker.com/r/csiroenvinf/geometry-data-service
-     * Image name: `kartoza/postgis:12.0`
-
+ 
 | Component            | Repo  |   Images |
 |---------------------| -------| -------- |
 | loci-integration-api |  * Github repo: https://github.com/CSIRO-enviro-informatics/loci-integration-api  | Main API based on `sanicframework/sanic:LTS`. [Dockerfile](https://github.com/CSIRO-enviro-informatics/loci-integration-api/blob/master/Dockerfile) ;  <BR> Elasticsearch image: `docker.elastic.co/elasticsearch/elasticsearch:6.3.1` |
