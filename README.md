@@ -10,12 +10,11 @@ Refer to the [https://locationindex.org](https://locationindex.org) site for mor
 
 ![Location Index](images/lociDiagram.png "Location Index")
 
-## What you can do here
-### Loc-I motivation and design choices  
+## What you can find here
+### Loc-I motivation and design  
 * [Principles](principles.md)
 * [Technical architecture](technical_architecture.md)
 * [Deployment details](deployment.md)
-  * Understand the mechanics of this cache of LocI
 ### Loc-I conventions
 * [Rules for Loc-I datasets](loci-datasets.md)
 * [Loc-I URIs](URI-conventions.md)
