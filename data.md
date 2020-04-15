@@ -29,7 +29,7 @@ This page lists datasets that is in Loc-I and others which are either being cons
 | [Indigenous Regions](https://asgsld.net/2016/indigenousregion/)  | http://linked.data.gov.au/dataset/asgs2016/indigenousregion/  | asgs16_ireg  |  IREG | 
 | [Significant Urban Areas](https://asgsld.net/2016/significanturbanarea/)  | http://linked.data.gov.au/dataset/asgs2016/significanturbanarea/   |  asgs16_sua |  SUA |  
 | [Greater Capital City Statistical Areas](https://asgsld.net/2016/greatercapitalcitystatisticalarea/)  | http://linked.data.gov.au/dataset/asgs2016/greatercapitalcitystatisticalarea/   |  asgs16_gccsa |  GCCSA |  
-| [Remoteness Areas](https://asgsld.net/2016/remotenessarea/)  |  http://linked.data.gov.au/dataset/asgs2016/remotenessarea/ |  asgs16_ra | ra  |  
+| [Remoteness Areas](https://asgsld.net/2016/remotenessarea/)  |  http://linked.data.gov.au/dataset/asgs2016/remotenessarea/ |  asgs16_ra | RA  |  
 
 ### ASGS 2016 Other Non-ABS Structures 
 
