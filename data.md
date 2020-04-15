@@ -16,6 +16,14 @@ ASGS 2016 Main (see https://asgsld.net/2016/)
 * [SA4](https://asgsld.net/2016/statisticalarealevel4/), 
 * [MB](https://asgsld.net/2016/meshblock/)
 
+ASGS 2016 other ABS
+* Indigenous Localities – ILOC, IARE, IREG
+* State section - UCL, SOSR, SOS
+* SUA, GCCSA, RA
+
+ASGS 2016 - non-abs
+* LGA, CED, SSC, NRMR
+
 Geofabric v2.1.1 (see https://geofabricld.net/)
 * [AWRADrainageDivision](https://geofabricld.net/drainagedivision/)
 * [HR River Region](https://geofabricld.net/riverregion/)
@@ -34,13 +42,7 @@ Linksets
 
 ## In progress
 
-ASGS 2016 other ABS
-* Indigenous Localities – ILOC, IARE, IREG
-* State section - UCL, SOSR, SOS
-* SUA, GCCSA, RA
 
-ASGS 2016 - non-abs
-* LGA, CED, SSC, NRMR
 
 Placenames
 
