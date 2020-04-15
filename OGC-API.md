@@ -14,8 +14,9 @@ Response structure is defined in a [set of YAML patterns](http://schemas.opengis
 Note that the response must be provided in HTML and JSON, other formats optional. 
 
 ## URI patterns
- Resource + spec-link | relative URI pattern | response + example
- --- | --- | --- 
+
+Resource + spec-link | relative URI pattern | response + example
+--- | --- | --- 
 [Service](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_api_landing_page) | `/` | [Landing page](https://geo.weather.gc.ca/geomet/features/)
 [API description](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_api_definition_2) | `/api` | [Swagger with API details](https://geo.weather.gc.ca/geomet/features/api)
 [Conformance](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_declaration_of_conformance_classes) | `/conformance` | [List of conformance classes implemented by this service](https://geo.weather.gc.ca/geomet/features/conformance)

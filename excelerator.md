@@ -28,7 +28,7 @@ MVP –  An online user interface providing basic ability to reapportion data up
 
 ## Examples 
 
-Examples to use as input files to Excelerator can be found in [the examples directory](/examples/analysis-data) of loci.cat. Simply drop them into the Excelerator portal, select the source reporting geography and feature set and hit go.
+Examples to use as input files to Excelerator can be found in [the examples directory](https://github.com/CSIRO-enviro-informatics/loci.cat/tree/gh-pages/examples/analysis-data) of loci.cat. Simply drop them into the Excelerator portal, select the source reporting geography and feature set and hit go.
 
 ## Feature notes
 
