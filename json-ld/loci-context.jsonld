@@ -14,9 +14,9 @@
     "name": "schema:name",
     "sameAs": "schema:sameAs",
     "related": "skos:related",
-    "geox":  "http://linked.data.gov.au/def/geox#,
+    "geox" :  "http://linked.data.gov.au/def/geox#",
     "epsg": "http://www.opengis.net/def/crs/EPSG/0/",
-    "asgs" : "http://linked.data.gov.au/def/asgs#,
+    "asgs" : "http://linked.data.gov.au/def/asgs#",
     "loci" : "http://linked.data.gov.au/def/loci#",
     "dct" : "http://purl.org/dc/terms/",
     "asgs-id": "http://linked.data.gov.au/def/asgs/id#suaCode2016"
