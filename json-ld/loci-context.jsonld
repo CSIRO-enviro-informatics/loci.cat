@@ -18,7 +18,7 @@
     "dc" : "http://purl.org/dc/elements/1.1/",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
-    "qudt" : "http://qudt.org/schema/qudt/"
+    "qudt" : "http://qudt.org/schema/qudt/",
     "geox" :  "http://linked.data.gov.au/def/geox#",
     "sf" : "http://www.opengis.net/ont/sf#",
     "epsg": "http://www.opengis.net/def/crs/EPSG/0/",
@@ -29,6 +29,6 @@
     "gnaf-aliastype" : "http://linked.data.gov.au/def/gnaf/code/AliasTypes#",
     "gnaf-geotype" : "http://linked.data.gov.au/def/gnaf/code/GeocodeTypes#",
     "gnaf-localitytype" : "http://gnafld.net/def/gnaf/code/LocalityTypes#",
-    "geofabric" : "http://linked.data.gov.au/def/geofabric#",
+    "geofabric" : "http://linked.data.gov.au/def/geofabric#"
    }
 }
