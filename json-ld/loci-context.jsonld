@@ -14,11 +14,21 @@
     "name": "schema:name",
     "sameAs": "schema:sameAs",
     "related": "skos:related",
-    "geox" :  "http://linked.data.gov.au/def/geox#",
-    "epsg": "http://www.opengis.net/def/crs/EPSG/0/",
-    "asgs" : "http://linked.data.gov.au/def/asgs#",
-    "loci" : "http://linked.data.gov.au/def/loci#",
     "dct" : "http://purl.org/dc/terms/",
-    "asgs-id": "http://linked.data.gov.au/def/asgs/id#suaCode2016"
+    "dc" : "http://purl.org/dc/elements/1.1/",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "qudt" : "http://qudt.org/schema/qudt/"
+    "geox" :  "http://linked.data.gov.au/def/geox#",
+    "sf" : "http://www.opengis.net/ont/sf#",
+    "epsg": "http://www.opengis.net/def/crs/EPSG/0/",
+    "loci" : "http://linked.data.gov.au/def/loci#",    
+    "asgs" : "http://linked.data.gov.au/def/asgs#",
+    "asgs-id": "http://linked.data.gov.au/def/asgs/id#suaCode2016",
+    "gnaf" : "http://linked.data.gov.au/def/gnaf#",
+    "gnaf-aliastype" : "http://linked.data.gov.au/def/gnaf/code/AliasTypes#",
+    "gnaf-geotype" : "http://linked.data.gov.au/def/gnaf/code/GeocodeTypes#",
+    "gnaf-localitytype" : "http://gnafld.net/def/gnaf/code/LocalityTypes#",
+    "geofabric" : "http://linked.data.gov.au/def/geofabric#",
    }
 }
