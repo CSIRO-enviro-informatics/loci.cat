@@ -64,7 +64,7 @@ The Loc-I core feature model implements the mandatory and option properties as f
 5. the geometry is provided as the value of `geo:hasGeometry` 
 6. the area is recorded as the value of `geox:hasArea` or `geox:hasAreaM2`
 7. spatial relations are recorded using `geo:sfWithin`, `geo:sfContains`, `geo:sfOverlaps`
-8. other kinds of part-whole relations may be recorded using `loci:within`, `loci:contains` or sub-properties of these
+8. other kinds of part-whole relations may be recorded using `loci:isPartOf`, `loci:hasPart` or sub-properties of these defined in applications
 9. membership of a registered dataset is recorded using `loci:isMemberOf`
 
 ![Essential Loc-I feature](./images/Loci-Feature.png)
