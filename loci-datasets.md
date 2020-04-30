@@ -64,7 +64,7 @@ The Loc-I core feature model implements the mandatory and option properties as f
 5. the geometry is provided as the value of `geo:hasGeometry` 
 6. the area is recorded as the value of `geox:hasArea` or `geox:hasAreaM2`
 7. spatial relations are recorded using `geo:sfWithin`, `geo:sfContains`, `geo:sfOverlaps`
-8. other kinds of part-whole relations may be recorded using `loci:isPartOf`, `loci:hasPart` or sub-properties of these defined in applications
+8. other part-whole relations may be recorded using `loci:isPartOf`, `loci:hasPart` or sub-properties of these defined in applications
 9. membership of a registered dataset is recorded using `loci:isMemberOf`
 
 ![Essential Loc-I feature](./images/Loci-Feature.png)
@@ -89,10 +89,9 @@ The significant benefit of having a common core is that the queries underlying s
 ## Examples showing only core properties
 ```
 <http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel2/205031088>
-  rdf:type geo:Feature ;
+  rdf:type geo:Feature , asgs:StatisticalAreaLevel2 ;
   dcterms:identifier "205031088"^^asgs-id:sa2Maincode2016 ;
   rdfs:label "French Island"^^asgs-id:sa2Name2016 ;
-  rdf:type asgs:StatisticalAreaLevel2 ;
   geo:hasGeometry <http://gds.loci.cat/geometry/asgs16_sa2/205031088> ;
   geox:hasAreaM2 [
       data:value 170229100.0 ;
@@ -104,9 +103,8 @@ The significant benefit of having a common core is that the queries underlying s
 .
 
 <http://linked.data.gov.au/dataset/asgs2016/meshblock/20663970000>
-  rdf:type geo:Feature ;
+  rdf:type geo:Feature , asgs:MeshBlock ;
   dcterms:identifier "20663970000"^^asgs-id:mbCode2016 ;
-  rdf:type asgs:MeshBlock ;
   dcterms:type asgs-cat:primary-production ;
   geo:hasGeometry <http://gds.loci.cat/geometry/asgs16_mb/20663970000> ;
   geox:hasAreaM2 [
@@ -118,10 +116,9 @@ The significant benefit of having a common core is that the queries underlying s
 .
 
 <http://linked.data.gov.au/dataset/gnaf-2016-05/address/GAVIC411436309>
-  rdf:type geo:Feature ;
+  rdf:type geo:Feature , gnaf:Address ;
   dcterms:identifier "GAVIC411436309"^^gnaf:gnaf-2016-05 ;
   rdfs:label "Address GAVIC411436309 of Rural type" ;
-  rdf:type gnaf:Address ;
   dcterms:type <http://gnafld.net/def/gnaf/code/AddressTypes#Rural> ;
   geo:hasGeometry [
       a sf:Point ;
@@ -134,9 +131,8 @@ The significant benefit of having a common core is that the queries underlying s
 .
 
 <http://linked.data.gov.au/dataset/geofabric/drainagedivision/9400210>
-  rdf:type geo:Feature ;
+  rdf:type geo:Feature , geof:DrainageDivision ;
   dcterms:identifier "9400210"^^geof:geofabric-id ;
-  rdf:type geof:DrainageDivision ;
   geo:hasGeometry <http://gds.loci.cat/geometry/geofabric2_1_1_awradrainagedivision/9400210> ;
   geox:hasAreaM2 [
       data:value 134617156547.115 ;
