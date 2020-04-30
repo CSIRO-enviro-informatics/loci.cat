@@ -6,13 +6,14 @@ permalink: /loci-datasets.html
 This page describes rules for datasets, conformance to which enables datasets to be integrated in the Loc-I index.
 
 ## Loc-I principles
-Loc-I focuses on spatial indexing and linking. 
+Loc-I focuses on providing persistent identifiers for spatial objects, and linking between locations from different datasets. 
 
-Loc-I is concerned with descriptions of geospatial entities, known as **features**, which are described within datasets that are maintained by distinct authorities and processes. 
+Loc-I is concerned with descriptions of geospatial entities or locations, known as **features**, which are described within datasets that are maintained by distinct authorities and processes. 
 The goal is to allow the spatial relationships with features from other datasets to be easily accessible - particularly spatial containment and overlap. 
 While these relationships might _in theory_ be computed on-the-fly, for various reasons this is not always practical or desirable. 
 The Loc-I index computes and assembles the relationships in advance, through various procedures which are tuned to the different sources. 
-These relationships then support the various Loc-I services, such as [Excelerator](excelerator.md) and [IderDown](iderDown.md)
+Some relationships between objects are inherent in the original datasets, some are computed from their spatial geometry and extent, and some arise from other considerations, such as jurisdictional arrangements. 
+The relationships then enable various Loc-I services, such as [Excelerator](excelerator.md) and [IderDown](iderDown.md)
 
 Each significant relationship between features is realised as an explicit 'link'. 
 Metadata is associated with each link in order to indicate where it comes from. 
@@ -24,19 +25,19 @@ To support Loc-I, access to a linked-data view of each Loc-I dataset through an 
 ### Required (mandatory)
 Properties required for a spatial dataset to be compatible with Loc-I:
 
-- a **persistent identifier** (i.e. an externally-referenceable [surrogate-key](https://en.wikipedia.org/wiki/Surrogate_key)). This allows persistent links between items.  
+- a **persistent identifier** (i.e. an externally-referenceable [surrogate-key](https://en.wikipedia.org/wiki/Surrogate_key)). This allows persistent links between features.  
 - the feature **classification** - i.e. the type of the feature from the context in which it was defined, e.g. MeshBlock, Address, Catchment 
-- the **georeferenced geometry** associated with the feature - usually expressed as a point, line, line, polygon, a set of pixels, a set of DGGS cells, etc. This allows relationsips to features in new datasets to be determined
+- a **georeferenced geometry** associated with the feature - usually expressed as a point, line, line, polygon, a set of pixels, a set of DGGS cells, etc. This allows spatial relationships to features in new datasets to be determined
 
 ### Recommended (optional)
 Useful but optional properties:
-- a **name** for the item - to support discovery through natural interfaces
+- a **name** for the feature - to support discovery through natural interfaces
 - the size (**length** or **area**) of the feature- to support re-apportionment functions
   - will be computed from the geometry if not provided a-priori (not required for features whose geometry is a Point). 
-- pre-defined **spatial relations** with other items in the same dataset (internal links) 
-  - these usually provide the most reliable basis for spatial links, and are commonly part of hierarchically organized datasets, such as the Australian Statistical Geography Standard within which all items are ultimately built as aggregates of _meshblocks_, or the Australian GeoFabric within which reporting-regions are composed of _catchments_. 
+- pre-defined **spatial or logical relations** with other features in the same dataset (internal links) 
+  - in-built relationships usually provide the most reliable basis for spatial links, and are commonly part of hierarchically organized datasets. For example, in the [Australian Statistical Geography Standard](https://www.abs.gov.au/websitedbs/D3310114.nsf/home/Australian+Statistical+Geography+Standard+(ASGS)) all spatial objects are built up from aggregates of _meshblocks_, or the [Australian Hydrological Geospatial Fabric (GeoFabric)](http://www.bom.gov.au/water/geofabric/) within which all reporting-regions are composed of _catchments_. 
 
-All other feature properties are application specific, thus not normally of direct interest in the context of Loc-I. 
+All other properties are application specific, thus not normally of direct interest in the context of Loc-I. 
 
 ## Implementation as linked data
 The Loc-I core feature model uses elements from the following standard RDF vocabularies
@@ -55,15 +56,16 @@ The Loc-I core feature model implements the mandatory and option properties as f
 1. each geospatial feature is encoded as a `geo:Feature` 
 2. the persistent identifier appears as 
   - the value of `dcterms:identifier` 
-  - the key in a **persistent URI** which must follow the [Loc-I URI convention](URI-conventions.md)
-3. the name is provided as the value of `rdfs:label` 
+  - the **persistent URI** that identifies the feature - this must follow the [Loc-I URI convention](URI-conventions.md)
+3. the name of each feature is provided as the value of `rdfs:label` 
 4. the feature-type or classification is encoded as 
   - `rdf:type` if the classifier is an `rdfs:Class` or `owl:Class`, which must be a sub-class of `geo:Feature`
   - `dcterms:type` if the classifier is something else, such as a `skos:Concept` 
 5. the geometry is provided as the value of `geo:hasGeometry` 
 6. the area is recorded as the value of `geox:hasArea` or `geox:hasAreaM2`
 7. spatial relations are recorded using `geo:sfWithin`, `geo:sfContains`, `geo:sfOverlaps`
-8. membership of a registered dataset is recorded using `loci:isMemberOf`
+8. other kinds of part-whole relations may be recorded using `loci:within`, `loci:contains` or sub-properties of these
+9. membership of a registered dataset is recorded using `loci:isMemberOf`
 
 ![Essential Loc-I feature](./images/Loci-Feature.png)
 
@@ -80,7 +82,7 @@ The constraints on `geo:Feature` required for Loc-I compatibility are defined in
 
 ## Queries
 
-The significant benefit of having a common core is that the queries required for standard Loc-I functionality are also common across datasets - i.e. the SPARQL queries will have no dependence on RDF predicates from application-specific vocabularies, only from `rdf:`, `dcterms:`, `rdfs:`, `geo:`, `geox:` and `loci:`. 
+The significant benefit of having a common core is that the queries underlying standard Loc-I services are common across datasets - i.e. the SPARQL queries have no dependence on RDF predicates from application-specific vocabularies, only from `rdf:`, `dcterms:`, `rdfs:`, `geo:`, `geox:` and `loci:`. 
 
 (detailed examples TBC)
 
