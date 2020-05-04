@@ -22,6 +22,8 @@ This page lists datasets that is in Loc-I and others which are either being cons
 
 ### ASGS 2016 Other ABS Structures (see https://asgsld.net/2016/)
 
+
+
 | Feature Type  | Prefix | Shortcode | Alias  |  
 |---|---|---|---|---|
 | [Indigenous Location](https://asgsld.net/2016/indigenouslocation/)  | http://linked.data.gov.au/dataset/asgs2016/indigenouslocation/  | asgs16_iloc  |  ILOC |  
@@ -31,9 +33,15 @@ This page lists datasets that is in Loc-I and others which are either being cons
 | [Greater Capital City Statistical Areas](https://asgsld.net/2016/greatercapitalcitystatisticalarea/)  | http://linked.data.gov.au/dataset/asgs2016/greatercapitalcitystatisticalarea/   |  asgs16_gccsa |  GCCSA |  
 | [Remoteness Areas](https://asgsld.net/2016/remotenessarea/)  |  http://linked.data.gov.au/dataset/asgs2016/remotenessarea/ |  asgs16_ra | RA  |  
 
+![ASGS ABS and Main structures](images/asgs-abs.jpg "ASGS ABS and Main structures")
+
+
 ### ASGS 2016 Other Non-ABS Structures 
 
 These are ABS's approximations (based on Mesh Blocks) of the feature types.
+
+![ASGS Non-ABS](images/asgs-non-abs.jpg "ASGS non-ABS structures")
+
 
 | Feature Type  | Prefix | Shortcode | Alias  |  
 |---|---|---|---|---|
