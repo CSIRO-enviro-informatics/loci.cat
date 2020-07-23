@@ -17,6 +17,7 @@ some observation data (number of dwellings), and converts the data into a repres
 
 ![Excelerator](images/excelerator.PNG "Excelerator")
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EYlroy7sAtA?start=787" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Why 
 

@@ -9,7 +9,10 @@ permalink: /integration-api.html
 ## What
 
 A REST API to a Loc-I Integrated Cache and other related data sources.
-     
+
+Example use of the Loc-I Integrated API in a Jupyter Notebook:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EYlroy7sAtA?start=1084" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Why
 
 Provides developers and technical analysts with interfaces to the [Loc-I reference cache](ref-cache.md) and other sources, to build applications and query a Loc-I cache without having to know SPARQL. This allows rapid development of applications using the REST API.

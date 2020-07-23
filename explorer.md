@@ -4,12 +4,15 @@ permalink: /explorer.html
 
 # Loc-I Explorer
 
-Test site:
-[http://loci-integration-app-test.s3-website-ap-southeast-2.amazonaws.com](http://loci-integration-app-test.s3-website-ap-southeast-2.amazonaws.com)
+[https://explorer.loci.cat](https://explorer.loci.cat)
+
+
 
 ## What
 
 A visual explorer that interfaces with the [Loc-I integration API](integration-api.md) APIs. This tool will enable users to visualise and interactively explore (by clicking on links) and searching the graph of interconnected ontologies (concepts), Loc-I datasets, spatial features within them and linksets that describe spatial relationships between them (i.e. by location, text labels, codes). 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EYlroy7sAtA?start=646" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
      
 ## Why
 
