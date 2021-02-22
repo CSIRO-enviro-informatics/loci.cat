@@ -2,22 +2,6 @@
 
 A number of relationship predicates used to describe **relationships between spatial features** in Loc-I and in the context of individual Loc-I datasets, as follows: 
 
-## Dublin Core
-
-From [Dublin Core](https://dublincore.org/specifications/dublin-core/dcmi-terms/) the following relations describe either part-whole or versioning relationships between resources
-
-Relation | definition 
---- | ---
-`relation` | A related resource
-`hasPart` | A related resource that is included either physically or logically in the described resource
-`isPartOf` | A related resource in which the described resource is physically or logically included
-`replaces` | A related resource that is supplanted, displaced, or superseded by the described resource
-`isReplacedBy` | A related resource that supplants, displaces, or supersedes the described resource
-`hasVersion` | A related resource that is a version, edition, or adaptation of the described resource
-`isVersionOf` | A related resource of which the described resource is a version, edition, or adaptation
-
-![DC Relations](images/dc-relations.png)
-
 ## GeoSPARQL
 
 From [GeoSPARQL](https://www.ogc.org/standards/geosparql) the following geospatial-topological relationships are of interest
@@ -41,7 +25,7 @@ Relation | definition
 
 ## Loc-I
 
-In [Loc-I](http://linked.data.gov.au/def/loci) the following generalized relations are defined
+In [Loc-I](http://linked.data.gov.au/def/loci) the following generalized topology relations are defined
 
 Relation | definition 
 --- | ---
@@ -55,9 +39,25 @@ Relation | definition
 
 ![Loc-I Relations](images/loci-relations.png)
 
+## Dublin Core
+
+Meanwhile [Dublin Core](https://dublincore.org/specifications/dublin-core/dcmi-terms/) provides the following general-purpose relations to describe either part-whole or versioning relationships between resources
+
+Relation | definition 
+--- | ---
+`relation` | A related resource
+`hasPart` | A related resource that is included either physically or logically in the described resource
+`isPartOf` | A related resource in which the described resource is physically or logically included
+`replaces` | A related resource that is supplanted, displaced, or superseded by the described resource
+`isReplacedBy` | A related resource that supplants, displaces, or supersedes the described resource
+`hasVersion` | A related resource that is a version, edition, or adaptation of the described resource
+`isVersionOf` | A related resource of which the described resource is a version, edition, or adaptation
+
+![DC Relations](images/dc-relations.png)
+
 ## All relations hierarchy
 
-The Loc-I relations allow us to join the GeoSPARQL and ASGS relations into a single sub-property hierarchy: 
+The Dublin Core and Loc-I relations allow us to join the GeoSPARQL and ASGS relations into a single sub-property hierarchy: 
 
 ![Loc-I Relations hierarchy](images/loci-relations-hierarchy.png)
 
