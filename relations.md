@@ -14,9 +14,11 @@ Relation | definition
 `sfWithin` | Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T\*F\*\*F\*\*\*
 `sfDisjoint` | Exists if the subject SpatialObject is spatially disjoint from the object SpatialObject. DE-9IM: FF\*FF\*\*\*\*
 
+This is a subset of the **Simple Features** implementation of the DE-9IM relations. [GeoSPARQL](https://www.ogc.org/standards/geosparql) also provides Egenhofer and RCC8 implementations. 
+
 ## ASGS
 
-In [ASGS](http://linked.data.gov.au/def/asgs) the following implement the relationships defined between different ASGS structures  
+In [ASGS](http://linked.data.gov.au/def/asgs) the relationships that are specified between different ASGS structures are implemented by
 
 Relation | definition 
 --- | ---
@@ -33,7 +35,7 @@ Relation | definition
 `contains`\* | The context resource contains the target resource, in some geospatial, logical, ownership, governance, jurisidictional or compositional sense 
 `isWithin`\* | The context resource is within or is part of the target resource, in some geospatial, logical, ownership, governance, jurisidictional or compositional sense
 `isDisjointWith`\* |  The target resource does not touch or intersect with the context 
-`sfRelation`\* | A geospatial-topological relationship
+`sfRelation`\* | A geospatial-topological relationship (utility property - superset of all the `geo:sf*` properties)
 
 \* indicates 'provisional'. 
 
@@ -55,14 +57,18 @@ Relation | definition
 
 ![DC Relations](images/dc-relations.png)
 
+Note that this is only a small subset of the full set of sub-properties of the Dublin Core `relation` property. 
+
 ## All relations hierarchy
 
-The Dublin Core and Loc-I relations allow us to join the GeoSPARQL and ASGS relations into a single sub-property hierarchy: 
+The Dublin Core and Loc-I relations can join the GeoSPARQL and ASGS relations into a single sub-property hierarchy: 
 
 ![Loc-I Relations hierarchy](images/loci-relations-hierarchy.png)
 
-This will support more generalized queries across datasets and linksets. 
+This will support more generalized queries across datasets and linksets in a Loc-I context. 
 
+---
+Some additional notes, incomplete ...
 
 # Identity and revisions
 
