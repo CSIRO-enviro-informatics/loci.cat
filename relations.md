@@ -37,7 +37,7 @@ In [ASGS](http://linked.data.gov.au/def/asgs) the following implement the relati
 Relation | definition 
 --- | ---
 `isAggregationOf` | The context resource is an aggregation of (composed of) one or more of the target resources 
-`aggregatesTo` | The context resource aggregates to the target resource, in a logical, ownership, governance, jurisidictional or 'is-part-of' sense 
+`aggregatesTo` | The context resource aggregates to the target resource 
 
 ## Loc-I
 
