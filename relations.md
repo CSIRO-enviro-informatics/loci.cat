@@ -48,8 +48,10 @@ Relation | definition
 `isEquivalentTo`\* | The target feature is intended to represent the same real-world entity as the context feature
 `contains`\* | The context resource contains the target resource, in some geospatial, logical, ownership, governance, jurisidictional or compositional sense 
 `isWithin`\* | The context resource is within or is part of the target resource, in some geospatial, logical, ownership, governance, jurisidictional or compositional sense
-`isDisjointWith` |  The target resource does not touch or intersect with the context 
-`sfRelation` | A geospatial-topological relationship
+`isDisjointWith`\* |  The target resource does not touch or intersect with the context 
+`sfRelation`\* | A geospatial-topological relationship
+
+\* indicates 'provisional'. 
 
 ![Loc-I Relations](images/loci-relations.png)
 
