@@ -9,11 +9,10 @@ From [GeoSPARQL](https://www.ogc.org/standards/geosparql) the following geospati
 Relation | definition 
 --- | ---
 `sfContains` |  Exists if the subject SpatialObject spatially contains the object SpatialObject. DE-9IM: T\*\*\*\*\*FF\*
-`sfEquals` | Exists if the subject SpatialObject spatially equals the object SpatialObject. DE-9IM: TFFFTFFFT
-`sfOverlaps` | Exists if the subject SpatialObject spatially overlaps the object SpatialObject. DE-9IM: T\*T\*\*\*T\*\* 
 `sfWithin` | Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T\*F\*\*F\*\*\*
+`sfOverlaps` | Exists if the subject SpatialObject spatially overlaps the object SpatialObject. DE-9IM: T\*T\*\*\*T\*\* 
+`sfEquals` | Exists if the subject SpatialObject spatially equals the object SpatialObject. DE-9IM: TFFFTFFFT
 `sfDisjoint` | Exists if the subject SpatialObject is spatially disjoint from the object SpatialObject. DE-9IM: FF\*FF\*\*\*\*
-
 
 This is a subset of the **Simple Features** implementation of the DE-9IM relations. [GeoSPARQL](https://www.ogc.org/standards/geosparql) also provides **Egenhofer** and **RCC8** implementations. 
 
@@ -53,7 +52,6 @@ Relation | definition
 `isReplacedBy` | A related resource that supplants, displaces, or supersedes the described resource
 `hasVersion` | A related resource that is a version, edition, or adaptation of the described resource
 `isVersionOf` | A related resource of which the described resource is a version, edition, or adaptation
-
 
 Note that this is only a small subset of the full set of sub-properties of the Dublin Core `relation` property. 
 
