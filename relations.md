@@ -14,7 +14,8 @@ Relation | definition
 `sfWithin` | Exists if the subject SpatialObject is spatially within the object SpatialObject. DE-9IM: T\*F\*\*F\*\*\*
 `sfDisjoint` | Exists if the subject SpatialObject is spatially disjoint from the object SpatialObject. DE-9IM: FF\*FF\*\*\*\*
 
-This is a subset of the **Simple Features** implementation of the DE-9IM relations. [GeoSPARQL](https://www.ogc.org/standards/geosparql) also provides Egenhofer and RCC8 implementations. 
+
+This is a subset of the **Simple Features** implementation of the DE-9IM relations. [GeoSPARQL](https://www.ogc.org/standards/geosparql) also provides **Egenhofer** and **RCC8** implementations. 
 
 ## ASGS
 
@@ -33,13 +34,11 @@ Relation | definition
 --- | ---
 `isEquivalentTo`\* | The target feature is intended to represent the same real-world entity as the context feature
 `contains`\* | The context resource contains the target resource, in some geospatial, logical, ownership, governance, jurisidictional or compositional sense 
-`isWithin`\* | The context resource is within or is part of the target resource, in some geospatial, logical, ownership, governance, jurisidictional or compositional sense
+`isWithin`\* | (inverse of `contains`) The context resource is within or is part of the target resource, in some geospatial, logical, ownership, governance, jurisidictional or compositional sense
 `isDisjointWith`\* |  The target resource does not touch or intersect with the context 
 `sfRelation`\* | A geospatial-topological relationship (utility property - superset of all the `geo:sf*` properties)
 
 \* indicates 'provisional'. 
-
-![Loc-I Relations](images/loci-relations.png)
 
 ## Dublin Core
 
@@ -55,7 +54,6 @@ Relation | definition
 `hasVersion` | A related resource that is a version, edition, or adaptation of the described resource
 `isVersionOf` | A related resource of which the described resource is a version, edition, or adaptation
 
-![DC Relations](images/dc-relations.png)
 
 Note that this is only a small subset of the full set of sub-properties of the Dublin Core `relation` property. 
 
