@@ -44,8 +44,8 @@ URI | explanation
 `http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208` | CED 208 (Cooper) from current (most recent) release of the ASGS CEDs
 
 'Non-ABS Structures' are revised more frequently. 
-There is a new release of Non-ABS Structures in July of each year, which includes feature-types (entity-types) for which one or more individuals have changed. 
-For example, Electoral Districts (EDs) (Commonwealth and State) are in an annual release if there have been adjustments to boundaries (which is not every year). 
+There is a new release of Non-ABS Structures each year, which includes feature-types (entity-types) for which one or more individuals have changed. 
+For example, Electoral Districts (EDs) (Commonwealth and State) are in a release if there have been adjustments to boundaries (which is not every year). 
 Each new release mentions all individuals of the entity-type, including those that have not changed. 
 
 'Non-ABS Structures' are composed from 'ABS Structures' (primarily Meshblocks or SA1s) taken from the most recent release. 
