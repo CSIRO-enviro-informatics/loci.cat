@@ -5,20 +5,68 @@ permalink: /URI-conventions.html
 # Loc-I URI conventions
 Web identifiers (URIs) for Loc-I resources must conform to [AGLDWG URI Conventions](#summary-of-agldwg-uri-guidelines). 
 
-Definitions
-```
-http://linked.data.gov.au/def/{scope}(/#){defID}
-```
+## Data 
 
-Datasets
+### Datasets
 ```
 http://linked.data.gov.au/dataset/{datasetID}
 ```
 
-Data items
+### Data items
 ```
-http://linked.data.gov.au/dataset/{datasetID}[/{collectionID}](/#){individualID}
+http://linked.data.gov.au/dataset/{datasetID}[/{collectionID}]{separator}{individualID}
 ```
+
+### Examples  
+#### ASGS 
+##### ABS Structures
+
+URI | explanation 
+--- | --- 
+`http://linked.data.gov.au/dataset/asgs2016/meshblock/20675580000` | MB 20675580000 from 2016 ASGS dataset
+`http://linked.data.gov.au/dataset/asgs2011/statisticalarealevel1/20703116718` | SA1 20703116718 from 2011 ASGS dataset
+`http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel1/20703116718` | SA1 20703116718 from 2016 ASGS dataset
+
+The 'ABS Structures' within ASGS are updated for each census - 2011, 2016, 2021 etc. 
+Each release is considered to be a new dataset - asgs2011, asgs2016, etc. 
+
+##### Non-ABS Structures
+
+URI | explanation 
+--- | --- 
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208/2011-07` | CED 208 (Chisholm) from 2011 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208/2013-07` | CED 208 (Chisholm) from 2013 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208/2016-07` | CED 208 (Chisholm) from 2016 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208/2017-07` | CED 208 (Chisholm) from 2017 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/207/2018-07` | CED 207 (Chisholm) from 2018 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/207` | CED 207 (Chisholm) from current (most recent) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208/2018-07` | CED 208 (Cooper) from 2018 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208` | CED 208 (Cooper) from current (most recent) release of the ASGS CEDs
+
+'Non-ABS Structures' are revised more frequently. 
+There is a new release of Non-ABS Structures in July of each year, only for those feature-types (entity-types) that have changed. 
+For example, Electoral Districts (EDs) (Commonwealth and State) are in an annual release if there have been adjustments to boundaries (which is not every year). 
+However, each new release mentions all individuals of the entity-type, including those that have not changed. 
+
+'Non-ABS Structures' are composed from 'ABS Structures' (primarily Meshblocks or SA1s) taken from the most recent release. 
+Thus, Non-ABS Structures described between 2011-2015 are composed from asgs2011 ABS Structures, while Non-ABS Structures described between 2016-2020 are composed from asgs2016 ABS Structures
+
+Because of the irregular update schedule, the Non-ABS stuctures are considered to be from a single dataset 'asgs', with the release date appended to the URI at an entity-level (rather than dataset-level which is used for ABS Structures). 
+
+Dataset | {datasetID} | {collectionID} | separator | 
+--- | --- | --- | --- 
+ASGS | `asgs2016` | `meshblock` <br/>`statisticalarealevel1` <br/>`statisticalarealevel2` <br/>`statisticalarealevel3` <br/>`statisticalarealevel4` <br/>`stateorterritory` <br/>`australia` | `/`
+G-NAF | `gnaf` | `address` <br/>`streetLocality` <br/>`locality` | `/`
+GeoFabric | `geofabric` | `contractedcatchment` <br/>`drainagedivision` <br/>`riverregion` | `/`
+Meshblock-ControlledCatchment links | `mb16cc` | `statement` | `/`
+
+
+Definitions, vocabularies, ontologies, schemas
+```
+http://linked.data.gov.au/def/{scope}(/#){defID}
+```
+
+## Data
 
 ## Classes and Feature-types
 
@@ -28,16 +76,6 @@ Ontology | {scope} | separator | {defID}
 [G-NAF](http://linked.data.gov.au/def/gnaf) |  `gnaf` | `#` | `Address` <br/>`StreetLocality` <br/>`Locality`
 [GeoFabric](http://linked.data.gov.au/def/geofabric) |  `geofabric` | `#` | `ContractedCatchment` <br/>`DrainageDivision` <br/>`RiverRegion`
 [Loc-I](http://linked.data.gov.au/def/loci) | `loci` | `#` | `DataPublisher` <br/>`Dataset` <br/>`DatasetLinkingStatement` <br/>`Feature` <br/>`Linkset`
-
-## Data
-Examples of URI patterns for specific datasets: 
-
-Dataset | {datasetID} | {collectionID} | separator | 
---- | --- | --- | --- 
-ASGS | `asgs2016` | `meshblock` <br/>`statisticalarealevel1` <br/>`statisticalarealevel2` <br/>`statisticalarealevel3` <br/>`statisticalarealevel4` <br/>`stateorterritory` <br/>`australia` | `/`
-G-NAF | `gnaf` | `address` <br/>`streetLocality` <br/>`locality` | `/`
-GeoFabric | `geofabric` | `contractedcatchment` <br/>`drainagedivision` <br/>`riverregion` | `/`
-Meshblock-ControlledCatchment links | `mb16cc` | `statement` | `/`
 
 ## Examples
 ### ASGS Summary and examples
@@ -74,6 +112,8 @@ http://linked.data.gov.au/dataset/geofabric/riverregion/9400228 | http://linked.
 ## Summary of AGLDWG URI guidelines
 
 Names in the linked.data.gov.au domain must follow the [AGLDWG URI Guideline](https://github.com/AGLDWG/guidelines/blob/master/PID-URI-Guidelines-v2.0.md).
+
+Note that [version 2.1 of the AGLDWG URI Guideline](https://github.com/AGLDWG/guidelines/blob/master/PID-URI-Guidelines-v2.1.md) specifies the use of `https:` throughout. We are considering how to migrate the current systems to HTTPS. 
 
 ### Definitions
 

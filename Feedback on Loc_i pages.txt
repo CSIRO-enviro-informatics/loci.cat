@@ -1,0 +1,8 @@
+Feedback on Loc_i pages
+
+- GitHub issues + email address
+- Placenames ontology design and doco
+
+What are technical components that need to be brought in to make 'this dataset' Loc-I compatible
+How does 'this dataset' link into Loc-I conceptual model
+
