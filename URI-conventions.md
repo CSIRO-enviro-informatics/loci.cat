@@ -44,70 +44,41 @@ URI | explanation
 `http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208` | CED 208 (Cooper) from current (most recent) release of the ASGS CEDs
 
 'Non-ABS Structures' are revised more frequently. 
-There is a new release of Non-ABS Structures in July of each year, only for those feature-types (entity-types) that have changed. 
+There is a new release of Non-ABS Structures in July of each year, which includes feature-types (entity-types) for which one or more individuals have changed. 
 For example, Electoral Districts (EDs) (Commonwealth and State) are in an annual release if there have been adjustments to boundaries (which is not every year). 
-However, each new release mentions all individuals of the entity-type, including those that have not changed. 
+Each new release mentions all individuals of the entity-type, including those that have not changed. 
 
 'Non-ABS Structures' are composed from 'ABS Structures' (primarily Meshblocks or SA1s) taken from the most recent release. 
 Thus, Non-ABS Structures described between 2011-2015 are composed from asgs2011 ABS Structures, while Non-ABS Structures described between 2016-2020 are composed from asgs2016 ABS Structures
 
-Because of the irregular update schedule, the Non-ABS stuctures are considered to be from a single dataset 'asgs', with the release date appended to the URI at an entity-level (rather than dataset-level which is used for ABS Structures). 
+The Non-ABS stuctures are considered to be from a single dataset 'asgs', with the release date appended to the URI at an entity-level (rather than dataset-level which is used for ABS Structures). 
 
-Dataset | {datasetID} | {collectionID} | separator | 
---- | --- | --- | --- 
-ASGS | `asgs2016` | `meshblock` <br/>`statisticalarealevel1` <br/>`statisticalarealevel2` <br/>`statisticalarealevel3` <br/>`statisticalarealevel4` <br/>`stateorterritory` <br/>`australia` | `/`
-G-NAF | `gnaf` | `address` <br/>`streetLocality` <br/>`locality` | `/`
-GeoFabric | `geofabric` | `contractedcatchment` <br/>`drainagedivision` <br/>`riverregion` | `/`
-Meshblock-ControlledCatchment links | `mb16cc` | `statement` | `/`
+#### G-NAF 
 
+URI | Explanation 
+--- | --- 
+http://linked.data.gov.au/dataset/gnaf/address/GAACT714845933 | Address `GAACT714845933`  
+http://linked.data.gov.au/dataset/gnaf/streetLocality/NSW2856338 | StreetLocality `NSW2856338`
+http://linked.data.gov.au/dataset/gnaf/locality/198023 | Locality `198023`
 
-Definitions, vocabularies, ontologies, schemas
-```
-http://linked.data.gov.au/def/{scope}(/#){defID}
-```
+#### Geofabric 
 
-## Data
+URI | Explanation 
+--- | --- 
+http://linked.data.gov.au/dataset/geofabric/contractedcatchment/9550009 | Contractedcatchment `9550009`
+http://linked.data.gov.au/dataset/geofabric/drainagedivision/9400214 | Drainagedivision `9400214`
+http://linked.data.gov.au/dataset/geofabric/riverregion/9400228 | Riverregion `9400228`
 
 ## Classes and Feature-types
 
+Feature types are implemented as 'classes' with URIs in the `/def/` namespace. 
+
 Ontology | {scope} | separator | {defID}
 --- | --- | --- | --- 
-[ASGS](http://linked.data.gov.au/def/asgs) |  `asgs` | `#` | `MeshBlock`<br/>`StatisticalAreaLevel1` <br/>`StatisticalAreaLevel2` <br/>`StatisticalAreaLevel3` <br/>`StatisticalAreaLevel4` <br/>`StateOrTerritory` <br/>`Country`
+[ASGS](http://linked.data.gov.au/def/asgs) |  `asgs` | `#` | `MeshBlock`<br/>`StatisticalAreaLevel1` <br/>`StatisticalAreaLevel2` <br/>`StatisticalAreaLevel3` <br/>`StatisticalAreaLevel4` <br/>`StateOrTerritory` <br/>`Country` <br/> etc. 
 [G-NAF](http://linked.data.gov.au/def/gnaf) |  `gnaf` | `#` | `Address` <br/>`StreetLocality` <br/>`Locality`
 [GeoFabric](http://linked.data.gov.au/def/geofabric) |  `geofabric` | `#` | `ContractedCatchment` <br/>`DrainageDivision` <br/>`RiverRegion`
-[Loc-I](http://linked.data.gov.au/def/loci) | `loci` | `#` | `DataPublisher` <br/>`Dataset` <br/>`DatasetLinkingStatement` <br/>`Feature` <br/>`Linkset`
-
-## Examples
-### ASGS Summary and examples
-
-Example individual | Class | Collection 
---- | --- | --- 
-http://linked.data.gov.au/dataset/asgs2016/meshblock/50259230000 |  http://linked.data.gov.au/def/asgs#MeshBlock | http://linked.data.gov.au/dataset/asgs2016/meshblock 
-http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel1/50102100504 | http://linked.data.gov.au/def/asgs#StatisticalAreaLevel1 | http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel1  
-http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel2/308031218 | http://linked.data.gov.au/def/asgs#StatisticalAreaLevel2 | http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel2 
-http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel3/80106 | http://linked.data.gov.au/def/asgs#StatisticalAreaLevel3 | http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel3 
-http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel4/207 | http://linked.data.gov.au/def/asgs#StatisticalAreaLevel4 | http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel4 
-http://linked.data.gov.au/dataset/asgs2016/stateorterritory/2 | http://linked.data.gov.au/def/asgs#StateOrTerritory | http://linked.data.gov.au/dataset/asgs2016/stateorterritory 
-http://linked.data.gov.au/dataset/asgs2016/australia/036 | http://linked.data.gov.au/def/asgs#Country | http://linked.data.gov.au/dataset/asgs2016/australia  
-http://linked.data.gov.au/dataset/mb16cc/statement/to98614 | http://linked.data.gov.au/def/loci#LinkingStatement | http://linked.data.gov.au/dataset/mb16cc
-
-Note: in the 2nd-last line, for the SAL6 'Australia' the _individual_ and _collection_ URIs use /australia/ rather than the _class name_ i.e. /country/ . This follows a [pattern](https://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/c453c497aadde71cca2576d300026a38/Body/0.D64!OpenElement&FieldElemFormat=jpg) inherited from the [ASGS reference](https://www.abs.gov.au/websitedbs/D3310114.nsf/home/Australian+Statistical+Geography+Standard+(ASGS)). 
-
-### G-NAF Summary and examples
-
-Example individual | Class | Collection |
---- | --- | --- |
-http://linked.data.gov.au/dataset/gnaf/address/GAACT714845933 | http://linked.data.gov.au/def/gnaf#Address| http://linked.data.gov.au/dataset/gnaf/address 
-http://linked.data.gov.au/dataset/gnaf/streetLocality/NSW2856338 | http://linked.data.gov.au/def/gnaf#StreetLocality | http://linked.data.gov.au/dataset/gnaf/streetLocality 
-http://linked.data.gov.au/dataset/gnaf/locality/198023 | http://linked.data.gov.au/def/asgs#Locality| http://linked.data.gov.au/dataset/gnaf/locality 
-
-### Geofabric Summary and examples
-
-Example individual | Class | Collection |
---- | --- | --- |
-http://linked.data.gov.au/dataset/geofabric/contractedcatchment/9550009 | http://linked.data.gov.au/def/geofabric#ContractedCatchment | http://linked.data.gov.au/dataset/geofabric/contractedcatchment 
-http://linked.data.gov.au/dataset/geofabric/drainagedivision/9400214 | http://linked.data.gov.au/def/geofabric#DrainageDivision | http://linked.data.gov.au/dataset/geofabric/drainagedivision 
-http://linked.data.gov.au/dataset/geofabric/riverregion/9400228 | http://linked.data.gov.au/def/geofabric#RiverRegion | http://linked.data.gov.au/dataset/geofabric/riverregion |
+[Loc-I](http://linked.data.gov.au/def/loci) | `loci` | `#` | `Feature` <br/>`Dataset` <br/>`LinkingStatement` <br/>`Linkset` <br/>`Lifecycle`
 
 ## Summary of AGLDWG URI guidelines
 
