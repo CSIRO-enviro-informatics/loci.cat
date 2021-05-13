@@ -21,16 +21,26 @@ http://linked.data.gov.au/dataset/{datasetID}[/{collectionID}]{separator}{indivi
 #### ASGS 
 ##### ABS Structures
 
+The 'ABS Structures' within ASGS are updated for each census - 2011, 2016, 2021 etc. 
+Each release is considered to be a new dataset - asgs2011, asgs2016, etc. 
+
 URI | explanation 
 --- | --- 
 `http://linked.data.gov.au/dataset/asgs2016/meshblock/20675580000` | MB 20675580000 from 2016 ASGS dataset
 `http://linked.data.gov.au/dataset/asgs2011/statisticalarealevel1/20703116718` | SA1 20703116718 from 2011 ASGS dataset
 `http://linked.data.gov.au/dataset/asgs2016/statisticalarealevel1/20703116718` | SA1 20703116718 from 2016 ASGS dataset
 
-The 'ABS Structures' within ASGS are updated for each census - 2011, 2016, 2021 etc. 
-Each release is considered to be a new dataset - asgs2011, asgs2016, etc. 
-
 ##### Non-ABS Structures
+
+'Non-ABS Structures' are revised more frequently. 
+There is a new release of Non-ABS Structures each year, which includes feature-types (entity-types) for which one or more individuals have changed. 
+For example, Electoral Districts (EDs) (Commonwealth and State) are in a release if there have been adjustments to boundaries (which is not every year). 
+Each new release mentions all individuals of the entity-type, including those that have not changed. 
+
+'Non-ABS Structures' are composed from 'ABS Structures' (usually Meshblocks or SA1s) taken from the most recent release. 
+Thus, Non-ABS Structures described between 2011-2015 are composed from asgs2011 ABS Structures, while Non-ABS Structures described between 2016-2020 are composed from asgs2016 ABS Structures
+
+The Non-ABS stuctures are considered to be from a single dataset 'asgs', with the release date appended to the URI at an entity-level (rather than dataset-level which is used for ABS Structures). 
 
 URI | explanation 
 --- | --- 
@@ -43,15 +53,24 @@ URI | explanation
 `http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208/2018-07` | CED 208 (Cooper) from 2018 (July) release of the ASGS CEDs
 `http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/208` | CED 208 (Cooper) from current (most recent) release of the ASGS CEDs
 
-'Non-ABS Structures' are revised more frequently. 
-There is a new release of Non-ABS Structures each year, which includes feature-types (entity-types) for which one or more individuals have changed. 
-For example, Electoral Districts (EDs) (Commonwealth and State) are in a release if there have been adjustments to boundaries (which is not every year). 
-Each new release mentions all individuals of the entity-type, including those that have not changed. 
+The local-identifier assigned by ABS for a CED is composed of (i) a number indicating the state (2=VIC) concatenated with (ii) the sequential number of the electorate from its position in an alphabetically-ordered list. 
+In 2018 Chisholm changed from CED 208 to CED 207, because the electorate of Batman (CED 203 in 2017) was renamed to Cooper (CED 208 in 2018) which shuffled the numbers in the range 203-208. 
+Use of the CED number makes it more difficult to track changes in an electorate over time, so it may be preferable to utilize the electorate name in the identifier instead (this is the official identifier assigned by the AEC). 
+However, it is also important not to confuse electorates with the same name in different States/Territories (Fraser has been used in ACT and VIC). 
+So scoping the identifier by state is probably still useful for this and other reasons. 
 
-'Non-ABS Structures' are composed from 'ABS Structures' (primarily Meshblocks or SA1s) taken from the most recent release. 
-Thus, Non-ABS Structures described between 2011-2015 are composed from asgs2011 ABS Structures, while Non-ABS Structures described between 2016-2020 are composed from asgs2016 ABS Structures
+Proposed URI | explanation 
+--- | --- 
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/vic-chisholm/2011-07` | CED 208 (Chisholm) from 2011 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/vic-chisholm/2013-07` | CED 208 (Chisholm) from 2013 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/vic-chisholm/2016-07` | CED 208 (Chisholm) from 2016 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/vic-chisholm/2017-07` | CED 208 (Chisholm) from 2017 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/vic-chisholm/2018-07` | CED 207 (Chisholm) from 2018 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/vic-chisholm` | CED 207 (Chisholm) from current (most recent) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/vic-cooper/2018-07` | CED 208 (Cooper) from 2018 (July) release of the ASGS CEDs
+`http://linked.data.gov.au/dataset/asgs/commonwealthelectoraldivision/vic-cooper` | CED 208 (Cooper) from current (most recent) release of the ASGS CEDs
 
-The Non-ABS stuctures are considered to be from a single dataset 'asgs', with the release date appended to the URI at an entity-level (rather than dataset-level which is used for ABS Structures). 
+Similar issues apply to SEDs and to a lesser extent to LGAs. 
 
 #### G-NAF 
 
